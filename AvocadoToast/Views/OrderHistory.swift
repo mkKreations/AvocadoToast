@@ -19,7 +19,7 @@ struct OrderHistory: View {
 		List(completedOrders) { order in
 			VStack(alignment: .leading) {
 				Text(order.name)
-				Text(order.timePlaced.description)
+				Text(order.timePlaced.formattedDate())
 					.font(.subheadline)
 					.foregroundColor(.secondary)
 			}
