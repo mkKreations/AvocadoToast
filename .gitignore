@@ -1,0 +1,11 @@
+# pesky xcuserstate file
+*.xcuserstate
+
+# since storyboard doesn't work well with git
+*.storyboard
+
+#.DS_Store file - macOS
+.DS_Store
+
+# xcuserdata
+xcuserdata
