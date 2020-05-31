@@ -32,12 +32,12 @@ extension CompletedOrder {
 		CompletedOrder(name: "Rye with Almond Butter",
 									 timePlaced: Date(),
 									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 includesRedPepperFlakes: true),
 		
 		CompletedOrder(name: "Multi-Grain with Hummus",
 									 timePlaced: Date(),
 									 includesSalt: false,
-									 includesRedPepperFlakes: false),
+									 includesRedPepperFlakes: true),
 		
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
@@ -47,12 +47,12 @@ extension CompletedOrder {
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(),
 									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 includesRedPepperFlakes: true),
 		
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
 									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 includesRedPepperFlakes: true),
 		
 		CompletedOrder(name: "Wheat with Tapenade",
 									 timePlaced: Date(),
@@ -67,7 +67,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
 									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 includesRedPepperFlakes: true),
 		
 		CompletedOrder(name: "Rye with Honey",
 									 timePlaced: Date(),
@@ -81,7 +81,7 @@ extension CompletedOrder {
 		
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(),
-									 includesSalt: true,
+									 includesSalt: false,
 									 includesRedPepperFlakes: false),
 		
 	]
