@@ -27,8 +27,10 @@ struct OrderHistory_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
 			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+//				.environment(\.colorScheme, .dark)
 			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
 				.previewDevice("iPhone Xs Max")
+				.environment(\.colorScheme, .dark)
 		}
 	}
 }

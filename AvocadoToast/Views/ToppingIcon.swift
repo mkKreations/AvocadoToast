@@ -21,6 +21,10 @@ import SwiftUI
 //}
 
 struct ToppingIcon: View {
+	// capturing environment var so we can configure icon correctly
+	@Environment(\.colorScheme) var colorScheme: ColorScheme
+	
+	// this is the main dependency
 	let topping: Topping
 	
 	// configure UI based on Topping
@@ -34,12 +38,19 @@ struct ToppingIcon: View {
 	private var visualConfig: (backgroundColor: Color, displayText: String) {
 		switch topping {
 		case .salt:
-			return (Color.black, "S")
+			return (.primary, "S")
 		case .redPepperFlakes:
-			return (Color.red, "R")
+			return (.red, "R")
 		case .eggs:
-			return (Color.yellow, "E")
+			return (.yellow, "E")
 		}
+	}
+	private var foregroundColor: Color {
+		// had to make this computed var for this one condition
+		if colorScheme == .dark && topping == .salt {
+			return .black
+		}
+		return .white
 	}
 	private let size: CGFloat = 25
 	
@@ -53,7 +64,7 @@ struct ToppingIcon: View {
 			
 			Text(self.visualConfig.displayText)
 				.font(.subheadline)
-				.foregroundColor(.white)
+				.foregroundColor(foregroundColor)
 		}
 		.frame(width: size, height: size)
 	}
