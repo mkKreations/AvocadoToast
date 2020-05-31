@@ -19,8 +19,7 @@ struct CompletedOrder: Identifiable {
 	
 	var name: String
 	var timePlaced: Date
-	var includesSalt: Bool
-	var includesRedPepperFlakes: Bool
+	var toppings: [Topping] = [] // using our Topping model
 }
 
 #if DEBUG
@@ -31,58 +30,44 @@ extension CompletedOrder {
 		
 		CompletedOrder(name: "Rye with Almond Butter",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: true),
+									 toppings: [.salt, .redPepperFlakes]),
 		
 		CompletedOrder(name: "Multi-Grain with Hummus",
 									 timePlaced: Date(),
-									 includesSalt: false,
-									 includesRedPepperFlakes: true),
+									 toppings: [.redPepperFlakes]),
 		
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 toppings: [.salt]),
 		
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: true),
+									 toppings: [.salt, .redPepperFlakes]),
 		
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: true),
+									 toppings: [.salt, .redPepperFlakes]),
 		
 		CompletedOrder(name: "Wheat with Tapenade",
-									 timePlaced: Date(),
-									 includesSalt: false,
-									 includesRedPepperFlakes: false),
+									 timePlaced: Date()),
 		
 		CompletedOrder(name: "Sourdough with Vegemite",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 toppings: [.salt]),
 		
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: true),
+									 toppings: [.salt, .redPepperFlakes]),
 		
 		CompletedOrder(name: "Rye with Honey",
-									 timePlaced: Date(),
-									 includesSalt: false,
-									 includesRedPepperFlakes: false),
+									 timePlaced: Date()),
 		
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
-									 includesSalt: true,
-									 includesRedPepperFlakes: false),
+									 toppings: [.salt]),
 		
 		CompletedOrder(name: "Sourdough with Chutney",
-									 timePlaced: Date(),
-									 includesSalt: false,
-									 includesRedPepperFlakes: false),
+									 timePlaced: Date()),
 		
 	]
 }

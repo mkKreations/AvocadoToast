@@ -27,11 +27,12 @@ struct OrderCell: View {
 			// still learning the power of spacers
 			Spacer()
 			
-			if order.includesSalt {
-				ToppingIcon(topping: .salt)
-			}
-			if order.includesRedPepperFlakes {
-				ToppingIcon(topping: .redPepperFlakes)
+			// can't use [Topping] as the iterator
+			// because Topping is an enum and can't
+			// conform to Identifiable and too lazy
+			// to fix 😭
+			ForEach(0..<self.order.toppings.count) { index in
+				ToppingIcon(topping: self.order.toppings[index])
 			}
 		}
 	}
