@@ -28,7 +28,7 @@ struct OrderForm: View {
 			Toggle(isOn: $order.includesRedPepperFlakes) {
 				Text("Include Red Pepper Flakes")
 			}
-			Stepper(value: $order.quantity) {
+			Stepper(value: $order.quantity, in: 1...10) {
 				Text("Quantity: \(order.quantity)")
 			}
 			
