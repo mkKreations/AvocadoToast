@@ -13,27 +13,12 @@ import SwiftUI
 // made orders
 
 struct OrderHistory: View {
+	// no need for property wrapper - just displaying data
 	let completedOrders: [CompletedOrder]
 	
 	var body: some View {
 		List(completedOrders) { order in
-			HStack {
-				VStack(alignment: .leading) {
-					Text(order.name)
-					Text(order.timePlaced.formattedDate())
-						.font(.subheadline)
-						.foregroundColor(.secondary)
-				}
-				
-				Spacer()
-				
-				if order.includesSalt {
-					ToppingIcon(topping: .salt)
-				}
-				if order.includesRedPepperFlakes {
-					ToppingIcon(topping: .redPepperFlakes)
-				}
-			}
+			OrderCell(order: order)
 		}
 	}
 }
