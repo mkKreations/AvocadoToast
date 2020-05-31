@@ -17,11 +17,22 @@ struct OrderHistory: View {
 	
 	var body: some View {
 		List(completedOrders) { order in
-			VStack(alignment: .leading) {
-				Text(order.name)
-				Text(order.timePlaced.formattedDate())
-					.font(.subheadline)
-					.foregroundColor(.secondary)
+			HStack {
+				VStack(alignment: .leading) {
+					Text(order.name)
+					Text(order.timePlaced.formattedDate())
+						.font(.subheadline)
+						.foregroundColor(.secondary)
+				}
+				
+				Spacer()
+				
+				if order.includesSalt {
+					ToppingIcon(topping: .salt)
+				}
+				if order.includesRedPepperFlakes {
+					ToppingIcon(topping: .redPepperFlakes)
+				}
 			}
 		}
 	}
