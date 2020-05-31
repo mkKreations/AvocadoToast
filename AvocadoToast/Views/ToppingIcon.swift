@@ -34,17 +34,21 @@ struct ToppingIcon: View {
 			return (Color.red, "R")
 		}
 	}
+	private let size: CGFloat = 25
 	
 	var body: some View {
+		// setting explicit size on ZStack because we want
+		// the view rendered from this struct to have set
+		// dimensions
 		ZStack {
 			Circle()
-				.foregroundColor(visualConfig.backgroundColor)
-
-			// not sure if the sizing for this is going to work
-			// I want it to fill all available space within circle
-			// need to experiment with it first
-			Text(visualConfig.displayText)
+				.foregroundColor(self.visualConfig.backgroundColor)
+			
+			Text(self.visualConfig.displayText)
+				.font(.subheadline)
+				.foregroundColor(.white)
 		}
+		.frame(width: size, height: size)
 	}
 }
 
