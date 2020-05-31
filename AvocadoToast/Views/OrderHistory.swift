@@ -17,7 +17,12 @@ struct OrderHistory: View {
 	
 	var body: some View {
 		List(completedOrders) { order in
-			Text(order.name)
+			VStack(alignment: .leading) {
+				Text(order.name)
+				Text(order.timePlaced.description)
+					.font(.subheadline)
+					.foregroundColor(.secondary)
+			}
 		}
 	}
 }
