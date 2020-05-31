@@ -26,12 +26,19 @@ struct ToppingIcon: View {
 	// configure UI based on Topping
 	// tuple is a good option since we
 	// are only configuring two values
+	
+	// pretty cool that to add a completely
+	// new ToppingIcon just add a new case
+	// to the Topping enum and then cover
+	// that new case here in visualConfig
 	private var visualConfig: (backgroundColor: Color, displayText: String) {
 		switch topping {
 		case .salt:
 			return (Color.black, "S")
 		case .redPepperFlakes:
 			return (Color.red, "R")
+		case .eggs:
+			return (Color.yellow, "E")
 		}
 	}
 	private let size: CGFloat = 25

@@ -13,4 +13,5 @@ import Foundation
 enum Topping {
 	case salt
 	case redPepperFlakes
+	case eggs
 }

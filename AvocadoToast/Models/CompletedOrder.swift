@@ -46,25 +46,26 @@ extension CompletedOrder {
 		
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
-									 toppings: [.salt, .redPepperFlakes]),
+									 toppings: [.salt, .redPepperFlakes, .eggs]),
 		
 		CompletedOrder(name: "Wheat with Tapenade",
-									 timePlaced: Date()),
-		
+									 timePlaced: Date(),
+									 toppings: [.eggs]),
+
 		CompletedOrder(name: "Sourdough with Vegemite",
 									 timePlaced: Date(),
 									 toppings: [.salt]),
 		
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
-									 toppings: [.salt, .redPepperFlakes]),
+									 toppings: [.salt, .redPepperFlakes, .eggs]),
 		
 		CompletedOrder(name: "Rye with Honey",
 									 timePlaced: Date()),
 		
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
-									 toppings: [.salt]),
+									 toppings: [.salt, .eggs]),
 		
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date()),
