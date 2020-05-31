@@ -15,6 +15,7 @@
 		2CC7CEDF248429490048BB77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CC7CEDD248429490048BB77 /* LaunchScreen.storyboard */; };
 		2CC7CEE72484341C0048BB77 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CEE62484341C0048BB77 /* Order.swift */; };
 		2CC7CEE9248434F00048BB77 /* OrderForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CEE8248434F00048BB77 /* OrderForm.swift */; };
+		2CFEA4EE2484518700D7DCC9 /* OrderHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFEA4ED2484518700D7DCC9 /* OrderHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		2CC7CEE0248429490048BB77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2CC7CEE62484341C0048BB77 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		2CC7CEE8248434F00048BB77 /* OrderForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderForm.swift; sourceTree = "<group>"; };
+		2CFEA4ED2484518700D7DCC9 /* OrderHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				2CC7CEDA248429490048BB77 /* Preview Content */,
 				2CC7CEE62484341C0048BB77 /* Order.swift */,
 				2CC7CEE8248434F00048BB77 /* OrderForm.swift */,
+				2CFEA4ED2484518700D7DCC9 /* OrderHistory.swift */,
 			);
 			path = AvocadoToast;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				2CC7CED5248429480048BB77 /* SceneDelegate.swift in Sources */,
 				2CC7CEE72484341C0048BB77 /* Order.swift in Sources */,
 				2CC7CED7248429480048BB77 /* ContentView.swift in Sources */,
+				2CFEA4EE2484518700D7DCC9 /* OrderHistory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
