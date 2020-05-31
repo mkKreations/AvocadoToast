@@ -13,16 +13,20 @@ import SwiftUI
 // made orders
 
 struct OrderHistory: View {
+	let completedOrders: [CompletedOrder]
+	
 	var body: some View {
-		Text("OrderHistory")
+		List(completedOrders) { order in
+			Text(order.name)
+		}
 	}
 }
 
 struct OrderHistory_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistory()
-			OrderHistory()
+			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
 				.previewDevice("iPhone Xs Max")
 		}
 	}
