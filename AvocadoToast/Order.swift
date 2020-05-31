@@ -19,3 +19,14 @@ struct Order {
 	var includesRedPepperFlakes: Bool
 	var quantity: Int
 }
+
+#if DEBUG
+// sample data to pass to previews and to
+// test local devices - only for DEBUG
+
+extension Order {
+	static let sampleOrder = Order(includesSalt: true,
+																 includesRedPepperFlakes: false,
+																 quantity: 1)
+}
+#endif

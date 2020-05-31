@@ -45,13 +45,10 @@ struct OrderForm: View {
 }
 
 struct OrderForm_Preview: PreviewProvider {
-	// just some data to pass to present previews
-	static let order = Order(includesSalt: false, includesRedPepperFlakes: true, quantity: 6)
-	
 	static var previews: some View {
 		Group {
-			OrderForm(order: Binding.constant(order))
-			OrderForm(order: Binding.constant(order))
+			OrderForm(order: Binding.constant(Order.sampleOrder))
+			OrderForm(order: Binding.constant(Order.sampleOrder))
 				.previewDevice("iPhone Xs Max")
 		}
 	}
