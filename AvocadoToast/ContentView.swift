@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
-    }
+	// this view struct is the source of truth
+	@State private var order = Order.sampleOrder
+	
+	var body: some View {
+		// state kept in sync via binding
+		OrderForm(order: $order)
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+	static var previews: some View {
+		ContentView()
+	}
 }
