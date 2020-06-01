@@ -18,10 +18,13 @@ import Foundation
 // conforms to Hashable so we can use instances
 // of this type as the SelectionValue for Picker
 
-enum Bread: CaseIterable, Hashable {
-	case white
-	case wheat
-	case multi_grain
-	case sourdough
-	case rye
+// string raw values to provide the titles for
+// each
+
+enum Bread: String, CaseIterable, Hashable {
+	case white = "White"
+	case wheat = "Wheat"
+	case multi_grain = "Multi-Grain"
+	case sourdough = "Sourdough"
+	case rye = "Rye"
 }

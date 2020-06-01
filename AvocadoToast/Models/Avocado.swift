@@ -18,7 +18,10 @@ import Foundation
 // conforms to Hashable so we can use instances
 // of this type as the SelectionValue for Picker
 
-enum Avocado: CaseIterable, Hashable {
-	case sliced
-	case mashed
+// string raw values to provide the titles for
+// each
+
+enum Avocado: String, CaseIterable, Hashable {
+	case sliced = "Sliced"
+	case mashed = "Mashed"
 }

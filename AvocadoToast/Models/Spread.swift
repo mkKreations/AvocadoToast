@@ -18,13 +18,16 @@ import Foundation
 // conforms to Hashable so we can use instances
 // of this type as the SelectionValue for Picker
 
-enum Spread: CaseIterable, Hashable {
-	case almond_butter
-	case peanut_butter
-	case honey
-	case almou
-	case tapenade
-	case hummus
-	case vegemite
-	case chutney
+// string raw values to provide the titles for
+// each
+
+enum Spread: String, CaseIterable, Hashable {
+	case almond_butter = "Almond Butter"
+	case peanut_butter = "Peanut Butter"
+	case honey = "Honey"
+	case almou = "Almou"
+	case tapenade = "Tapenade"
+	case hummus = "Hummus"
+	case vegemite = "Vegemite"
+	case chutney = "Chutney"
 }
