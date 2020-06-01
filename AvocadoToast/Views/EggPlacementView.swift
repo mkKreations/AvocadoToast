@@ -16,16 +16,13 @@ import SwiftUI
 // late at the moment - so I'll do it tomorrow but here's
 // placeholder text for now!
 
-// 53:54
+// 51:22 - struct setup
+// 53:54 - dependencies
 
 struct EggPlacementView: View {
 	var body: some View {
 		VStack {
-			Text("More to come later as I have to create the assets for this view in Sketch!!!")
-				.multilineTextAlignment(.center)
-			Text("And they're pretty complex assets to create from scratch!!")
-				.multilineTextAlignment(.center)
-			Text("So just placeholder text for now! :)")
+			Text("More to come later!!!")
 				.multilineTextAlignment(.center)
 		}
 		.padding([.leading, .trailing])

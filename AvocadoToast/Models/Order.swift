@@ -32,7 +32,7 @@ struct Order {
 extension Order {
 	static let sampleOrder = Order(includesSalt: true,
 																 includesRedPepperFlakes: false,
-																 includesEgg: true,
+																 includesEgg: false,
 																 quantity: 1,
 																 bread: .wheat,
 																 spread: .chutney,

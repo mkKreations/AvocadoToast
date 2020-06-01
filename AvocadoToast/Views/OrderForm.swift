@@ -54,6 +54,22 @@ struct OrderForm: View {
 				Toggle(isOn: $order.includesRedPepperFlakes) {
 					Text("Include Red Pepper Flakes")
 				}
+				// pass an animation() with the binding so
+				// that upon state change - you receive an
+				// animation
+				Toggle(isOn: $order.includesEgg.animation()) {
+					Text("Include Egg")
+				}
+				if order.includesEgg {
+					// we will navigate over this this screen if the
+					// user wants an egg included
+					NavigationLink(destination: EggPlacementView()) {
+						Text("Place my egg!")
+					}
+				}
+			}
+			
+			Section {
 				Stepper(value: $order.quantity, in: 1...10) {
 					Text("Quantity: \(order.quantity)")
 				}
