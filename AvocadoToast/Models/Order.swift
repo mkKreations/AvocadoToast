@@ -18,6 +18,10 @@ struct Order {
 	var includesSalt: Bool
 	var includesRedPepperFlakes: Bool
 	var quantity: Int
+	// our model enum types
+	var bread: Bread
+	var spread: Spread
+	var avocado: Avocado
 }
 
 #if DEBUG
@@ -27,6 +31,9 @@ struct Order {
 extension Order {
 	static let sampleOrder = Order(includesSalt: true,
 																 includesRedPepperFlakes: false,
-																 quantity: 1)
+																 quantity: 1,
+																 bread: .wheat,
+																 spread: .chutney,
+																 avocado: .mashed)
 }
 #endif
