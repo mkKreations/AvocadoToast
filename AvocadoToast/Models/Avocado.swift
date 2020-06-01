@@ -33,7 +33,7 @@ import Foundation
 // same value even when a new instance of this struct is
 // copied (value types)
 
-enum Avocado: String, CaseIterable, Hashable {
+enum Avocado: String, CaseIterable, Hashable, Identifiable {
 	var id: String { rawValue }
 	
 	case sliced = "Sliced"
