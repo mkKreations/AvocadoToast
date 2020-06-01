@@ -12,7 +12,10 @@ import Foundation
 // avocado options a user can choose for
 // their order
 
-enum Avocado {
+// conformance to CaseIterable so we have
+// access to .[allCases]
+
+enum Avocado: CaseIterable {
 	case sliced
 	case mashed
 }

@@ -12,7 +12,10 @@ import Foundation
 // bread options a user can choose for
 // their order
 
-enum Bread {
+// conformance to CaseIterable so we have
+// access to .[allCases]
+
+enum Bread: CaseIterable {
 	case white
 	case wheat
 	case multi_grain

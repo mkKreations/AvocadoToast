@@ -12,7 +12,10 @@ import Foundation
 // spread options a user can choose for
 // their order
 
-enum Spread {
+// conformance to CaseIterable so we have
+// access to .[allCases]
+
+enum Spread: CaseIterable {
 	case almond_butter
 	case peanut_butter
 	case honey
