@@ -20,24 +20,24 @@ struct OrderForm: View {
 	var body: some View {
 		Form {
 			Section(header: Text("Avocado Toast").font(.title)) {
-				// I have yet to figure out how to make an enum conform
-				// to identifiable so I can iterate directly over .[allCases]
+				// we can not currently interact with pickers because
+				// this form is not embedded in a nav view
 				Picker("Bread", selection: $order.bread) {
-					ForEach(0..<Bread.allCases.count) { breadIndex in
-						Text(Bread.allCases[breadIndex].rawValue)
-							.tag(self.order.bread) // make sure to add tag to uniquely id each case
+					ForEach(Bread.allCases) { bread in
+						Text(bread.rawValue)
+							.tag(bread) // make sure to add tag to uniquely id each case
 					}
 				}
 				Picker("Spread", selection: $order.spread) {
-					ForEach(0..<Spread.allCases.count) { spreadIndex in
-						Text(Spread.allCases[spreadIndex].rawValue)
-							.tag(self.order.spread)
+					ForEach(Spread.allCases) { spread in
+						Text(spread.rawValue)
+							.tag(spread)
 					}
 				}
 				Picker("Avocado", selection: $order.avocado) {
-					ForEach(0..<Avocado.allCases.count) { avocadoIndex in
-						Text(Avocado.allCases[avocadoIndex].rawValue)
-							.tag(self.order.avocado)
+					ForEach(Avocado.allCases) { avocado in
+						Text(avocado.rawValue)
+							.tag(avocado)
 					}
 				}
 			}
