@@ -15,7 +15,10 @@ import Foundation
 // conformance to CaseIterable so we have
 // access to .[allCases]
 
-enum Bread: CaseIterable {
+// conforms to Hashable so we can use instances
+// of this type as the SelectionValue for Picker
+
+enum Bread: CaseIterable, Hashable {
 	case white
 	case wheat
 	case multi_grain

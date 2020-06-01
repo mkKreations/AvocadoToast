@@ -15,7 +15,10 @@ import Foundation
 // conformance to CaseIterable so we have
 // access to .[allCases]
 
-enum Spread: CaseIterable {
+// conforms to Hashable so we can use instances
+// of this type as the SelectionValue for Picker
+
+enum Spread: CaseIterable, Hashable {
 	case almond_butter
 	case peanut_butter
 	case honey
