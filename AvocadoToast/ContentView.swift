@@ -13,8 +13,10 @@ struct ContentView: View {
 	@State private var order = Order.sampleOrder
 	
 	var body: some View {
-		// state kept in sync via binding
-		OrderForm(order: $order)
+		NavigationView {
+			// state kept in sync via binding
+			OrderForm(order: $order)
+		}
 	}
 }
 

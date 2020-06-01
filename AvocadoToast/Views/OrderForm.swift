@@ -19,9 +19,14 @@ struct OrderForm: View {
 	
 	var body: some View {
 		Form {
-			Section(header: Text("Avocado Toast").font(.title)) {
-				// we can not currently interact with pickers because
-				// this form is not embedded in a nav view
+			Section {
+				// KNOWN ISSUE:
+				// the layout jumps after navigating to
+				// the options of a picker after selecting
+				// the picker row in the form
+				
+				// as far as I know, this is a problem with
+				// SwiftUI
 				Picker("Bread", selection: $order.bread) {
 					ForEach(Bread.allCases) { bread in
 						Text(bread.rawValue)
@@ -60,6 +65,7 @@ struct OrderForm: View {
 				}
 			}
 		}
+		.navigationBarTitle("Avocado Toast")
 	}
 	
 	private func submitOrder() {
@@ -70,9 +76,13 @@ struct OrderForm: View {
 struct OrderForm_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderForm(order: Binding.constant(Order.sampleOrder))
-			OrderForm(order: Binding.constant(Order.sampleOrder))
-				.previewDevice("iPhone Xs Max")
+			NavigationView {
+				OrderForm(order: Binding.constant(Order.sampleOrder))
+			}
+			NavigationView {
+				OrderForm(order: Binding.constant(Order.sampleOrder))
+			}
+			.previewDevice("iPhone Xs Max")
 		}
 	}
 }
