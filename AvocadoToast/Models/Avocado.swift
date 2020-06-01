@@ -21,7 +21,21 @@ import Foundation
 // string raw values to provide the titles for
 // each
 
+// finally figured out how to conform to Identiable
+// in a struct
+
+// id needs to be unique but we do not want it to
+// be unique each time we get a new instance of a Spread
+// type because then we'll kill all reusabiity
+
+// that's why it's best to return the rawValue because
+// that value is unique for each case but will return the
+// same value even when a new instance of this struct is
+// copied (value types)
+
 enum Avocado: String, CaseIterable, Hashable {
+	var id: String { rawValue }
+	
 	case sliced = "Sliced"
 	case mashed = "Mashed"
 }
