@@ -18,25 +18,25 @@ struct OrderForm: View {
 	@Binding var order: Order
 	
 	var body: some View {
-		VStack {
-			Text("Avocado Toast")
-				.font(.title)
+		Form {			
+			Section(header: Text("Avocado Toast").font(.title)) {
+				Toggle(isOn: $order.includesSalt) {
+					Text("Include Salt")
+				}
+				Toggle(isOn: $order.includesRedPepperFlakes) {
+					Text("Include Red Pepper Flakes")
+				}
+				Stepper(value: $order.quantity, in: 1...10) {
+					Text("Quantity: \(order.quantity)")
+				}
+			}
 			
-			Toggle(isOn: $order.includesSalt) {
-				Text("Include Salt")
-			}
-			Toggle(isOn: $order.includesRedPepperFlakes) {
-				Text("Include Red Pepper Flakes")
-			}
-			Stepper(value: $order.quantity, in: 1...10) {
-				Text("Quantity: \(order.quantity)")
-			}
-			
-			Button(action: submitOrder) {
-				Text("Order")
+			Section {
+				Button(action: submitOrder) {
+					Text("Order")
+				}
 			}
 		}
-		.padding([.leading, .trailing])
 	}
 	
 	private func submitOrder() {
