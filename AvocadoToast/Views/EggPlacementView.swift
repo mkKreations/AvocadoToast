@@ -25,6 +25,18 @@ struct EggPlacementView: View {
 		VStack {
 			Text("More to come later!!!")
 				.multilineTextAlignment(.center)
+			
+			Image("White_Full")
+				.resizable()
+				.scaledToFit()
+
+			Image("Rye_Full")
+				.resizable()
+				.scaledToFit()
+
+			Image("Egg")
+				.resizable()
+				.scaledToFit()
 		}
 		.padding([.leading, .trailing])
 	}
