@@ -18,6 +18,7 @@ import SwiftUI
 
 // 51:22 - struct setup
 // 53:54 - dependencies
+// 54:82 - container view
 
 struct EggPlacementView: View {
 	var body: some View {
