@@ -22,21 +22,15 @@ import SwiftUI
 
 struct EggPlacementView: View {
 	var body: some View {
-		VStack {
-			Text("More to come later!!!")
-				.multilineTextAlignment(.center)
-			
-			Image("White_Full")
-				.resizable()
-				.scaledToFit()
-
+		ZStack {
 			Image("Rye_Full")
 				.resizable()
 				.scaledToFit()
 
 			Image("Egg")
 				.resizable()
-				.scaledToFit()
+				.aspectRatio(1.0, contentMode: .fit)
+				.frame(width: 250)
 		}
 		.padding([.leading, .trailing])
 	}
