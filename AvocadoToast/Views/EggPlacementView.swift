@@ -21,41 +21,31 @@ import SwiftUI
 // 54:82 - container view
 
 struct EggPlacementView: View {
-	@State private var dragLocation = CGPoint.zero
+	@State private var dragUnitPoint = UnitPoint.center
+	private var dragGesture: some Gesture {
+		DragGesture()
+			.onChanged {
+				self.dragUnitPoint = UnitPoint(x: $0.location.x,
+																			 y: $0.location.y)
+		}
+	}
 	
 	var body: some View {
-		GeometryReader { geo in
-			ZStack {
-				Image("Rye_Full")
-					.resizable()
-					.scaledToFit()
-
-				Image("Egg")
-					.resizable()
-					.aspectRatio(1.0, contentMode: .fit)
-					.frame(width: 250)
-//					.position(CGPoint(x: geo.frame(in: .local).size.width + self.dragLocation.x,
-//														y: geo.frame(in: .local).size.height + self.dragLocation.y))
-					.position(CGPoint(x: (geo.size.width / 2.0) + self.dragLocation.x,
-														y: (geo.size.height  / 2.0) + self.dragLocation.y))
-//					.position(CGPoint(x: self.dragLocation.x,
-//														y: self.dragLocation.y))
-					.gesture(
-						DragGesture()
-							.onChanged {
-								let newLocation = CGPoint(x: $0.location.x - (geo.size.width / 2.0),
-																					y: $0.location.y - (geo.size.height / 2.0))
-								self.dragLocation = newLocation
-							}
-							.onEnded {
-								let newLocation = CGPoint(x: $0.location.x - (geo.size.width / 2.0),
-																					y: $0.location.y - (geo.size.height / 2.0))
-								self.dragLocation = newLocation
-							}
-					)
-			}
-			.padding([.leading, .trailing])
+		ZStack {
+			Image("Rye_Full")
+				.resizable()
+				.scaledToFit()
+			
+			Image("Egg")
+				.resizable()
+				.aspectRatio(1.0, contentMode: .fit)
+				.frame(width: 250)
+				.position(CGPoint(x: self.dragUnitPoint.x,
+													y: self.dragUnitPoint.y))
+				.gesture(self.dragGesture)
 		}
+		.padding([.leading, .trailing])
+		.border(Color.red, width: 2.0)
 	}
 }
 
