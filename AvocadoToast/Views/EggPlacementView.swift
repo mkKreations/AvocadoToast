@@ -42,7 +42,6 @@ struct EggPlacementView: View {
 				// state will return back to initial value
 				// after drag (gesture) event
 				state = value.translation
-				print(value.translation)
 			}
 			.onEnded { val in
 				// update our @Binding that's keeping track of

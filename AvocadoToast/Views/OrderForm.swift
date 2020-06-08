@@ -13,9 +13,9 @@ import SwiftUI
 // ordering our avocado toast
 
 struct OrderForm: View {
-	// this view struct is not the source
+	// this view struct is the source
 	// of truth for this value
-	@Binding var order: Order
+	@State var order: Order = Order.sampleOrder
 	
 	var body: some View {
 		Form {
@@ -93,10 +93,10 @@ struct OrderForm_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
 			NavigationView {
-				OrderForm(order: Binding.constant(Order.sampleOrder))
+				OrderForm()
 			}
 			NavigationView {
-				OrderForm(order: Binding.constant(Order.sampleOrder))
+				OrderForm()
 			}
 			.previewDevice("iPhone Xs Max")
 		}

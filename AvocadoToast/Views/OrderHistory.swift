@@ -14,21 +14,22 @@ import SwiftUI
 
 struct OrderHistory: View {
 	// no need for property wrapper - just displaying data
-	let completedOrders: [CompletedOrder]
+	let completedOrders: [CompletedOrder] = CompletedOrder.sampleOrders
 	
 	var body: some View {
 		List(completedOrders) { order in
 			OrderCell(order: order)
 		}
+		.navigationBarTitle("Previous Orders")
 	}
 }
 
 struct OrderHistory_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+			OrderHistory()
 //				.environment(\.colorScheme, .dark)
-			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+			OrderHistory()
 				.previewDevice("iPhone Xs Max")
 				.environment(\.colorScheme, .dark)
 		}
