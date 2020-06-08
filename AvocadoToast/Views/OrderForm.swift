@@ -61,9 +61,9 @@ struct OrderForm: View {
 					Text("Include Egg")
 				}
 				if order.includesEgg {
-					// we will navigate over this this screen if the
+					// we will navigate over to this screen if the
 					// user wants an egg included
-					NavigationLink(destination: EggPlacementView()) {
+					NavigationLink(destination: EggPlacementView(eggLocation: $order.eggLocation)) {
 						Text("Place my egg!")
 					}
 				}

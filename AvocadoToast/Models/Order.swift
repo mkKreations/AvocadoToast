@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 // this struct will serve as the model
 
@@ -19,6 +20,7 @@ struct Order {
 	var includesRedPepperFlakes: Bool
 	var includesEgg: Bool
 	var quantity: Int
+	var eggLocation: CGSize
 	// our model enum types
 	var bread: Bread
 	var spread: Spread
@@ -34,6 +36,7 @@ extension Order {
 																 includesRedPepperFlakes: false,
 																 includesEgg: false,
 																 quantity: 1,
+																 eggLocation: .zero,
 																 bread: .wheat,
 																 spread: .chutney,
 																 avocado: .mashed)

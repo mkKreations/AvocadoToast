@@ -17,19 +17,21 @@ import SwiftUI
 // like it to go
 
 struct EggPlacementView: View {
-	@State private var dragUnitPoint = UnitPoint.center
-	
-	// @GestureState is a property wrapper meant to work
-	// specifically with types that conform to Gesture
-	// One of the perks of using it is that it returns to
-	// its initial value after the gesture event
-	@GestureState private var dragOffset: CGSize = .zero
-	
+	// @Binding to keep track of the accumulated egg's translation
 	// since @GestureState returns back to its initial
 	// state - this property will keep track of our
 	// accumulated drag translation and update the view's
 	// offset accordingly
-	@State private var accumulatedDragTranslation: CGSize = .zero
+	@Binding var eggLocation: CGSize
+		
+	// @GestureState is a property wrapper meant to work
+	// specifically with types that conform to Gesture
+	// one of the perks of using it is that it returns to
+	// its initial value after the gesture event
+	// this perk is especially helpful in our case since
+	// the only time the value of this property != 0 is
+	// when it is being updated in the DragGesture .updating
+	@GestureState private var dragOffset: CGSize = .zero
 	
 	// our drag gesture - keeping type hidden using opaque
 	// type but compiler knows
@@ -38,19 +40,20 @@ struct EggPlacementView: View {
 			.updating($dragOffset) { (value, state, transaction) in
 				// maintaining property state as user drags
 				// state will return back to initial value
-				// after drag event
+				// after drag (gesture) event
 				state = value.translation
 				print(value.translation)
 			}
 			.onEnded { val in
-				// update our property that's keeping track of
+				// update our @Binding that's keeping track of
 				// the accumulated translation so we can update
 				// the offset of the view accordingly
-				self.accumulatedDragTranslation.width += val.translation.width
-				self.accumulatedDragTranslation.height += val.translation.height
+				self.eggLocation.width += val.translation.width
+				self.eggLocation.height += val.translation.height
 			}
 	}
 	
+	// all our UI goods
 	var body: some View {
 		ZStack {
 			Image("Rye_Full")
@@ -63,8 +66,8 @@ struct EggPlacementView: View {
 				.frame(width: 250)
 				// since dragOffset resets to initial value
 				// we have to keep track of translation ourselves
-				.offset(x: self.dragOffset.width + self.accumulatedDragTranslation.width,
-								y: self.dragOffset.height + self.accumulatedDragTranslation.height)
+				.offset(x: self.dragOffset.width + self.eggLocation.width,
+								y: self.dragOffset.height + self.eggLocation.height)
 				.gesture(self.dragGesture)
 		}
 		// setting flexible height for ZStack frame as current solution to TODO
@@ -77,15 +80,14 @@ struct EggPlacementView: View {
 		// prevent dragging outside the bounds of the view
 		.frame(minHeight: 0, idealHeight: .infinity, maxHeight: .infinity)
 		.padding([.leading, .trailing])
-		.border(Color.red, width: 2.0)
 	}
 }
 
 struct EggPlacementView_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			EggPlacementView()
-			EggPlacementView()
+			EggPlacementView(eggLocation: Binding.constant(.zero))
+			EggPlacementView(eggLocation: Binding.constant(.zero))
 				.previewDevice("iPhone Xs Max")
 		}
 	}
