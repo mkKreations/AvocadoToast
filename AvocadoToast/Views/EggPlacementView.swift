@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+// TODO:
+// restrict dragging of egg to bounds of ZStack
+// check line 70
+
 // this view struct will allow a user to drag an egg
 // on top of their toast to place it where they would
 // like it to go
@@ -18,7 +22,7 @@ struct EggPlacementView: View {
 	// @GestureState is a property wrapper meant to work
 	// specifically with types that conform to Gesture
 	// One of the perks of using it is that it returns to
-	// its initial value after the drag event
+	// its initial value after the gesture event
 	@GestureState private var dragOffset: CGSize = .zero
 	
 	// since @GestureState returns back to its initial
@@ -28,7 +32,7 @@ struct EggPlacementView: View {
 	@State private var accumulatedDragTranslation: CGSize = .zero
 	
 	// our drag gesture - keeping type hidden using opaque
-	// type
+	// type but compiler knows
 	private var dragGesture: some Gesture {
 		DragGesture()
 			.updating($dragOffset) { (value, state, transaction) in
@@ -38,13 +42,13 @@ struct EggPlacementView: View {
 				state = value.translation
 				print(value.translation)
 			}
-		.onEnded { val in
-			// update our property that's keeping track of
-			// the accumulated translation so we can update
-			// the offset of the view accordingly
-			self.accumulatedDragTranslation.width += val.translation.width
-			self.accumulatedDragTranslation.height += val.translation.height
-		}
+			.onEnded { val in
+				// update our property that's keeping track of
+				// the accumulated translation so we can update
+				// the offset of the view accordingly
+				self.accumulatedDragTranslation.width += val.translation.width
+				self.accumulatedDragTranslation.height += val.translation.height
+			}
 	}
 	
 	var body: some View {
@@ -63,6 +67,15 @@ struct EggPlacementView: View {
 								y: self.dragOffset.height + self.accumulatedDragTranslation.height)
 				.gesture(self.dragGesture)
 		}
+		// setting flexible height for ZStack frame as current solution to TODO
+		// this allows user to place egg nearly anywhere on screen (vertically)
+		// and still be able to interact with it
+		// before - the ZStack was the height of the largest Image (the bread)
+		// and if user dragged the egg outside the bounds - then they couldn't
+		// interact with it
+		// overall, I want to remove setting flexible height for frame and instead
+		// prevent dragging outside the bounds of the view
+		.frame(minHeight: 0, idealHeight: .infinity, maxHeight: .infinity)
 		.padding([.leading, .trailing])
 		.border(Color.red, width: 2.0)
 	}
