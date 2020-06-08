@@ -12,21 +12,38 @@ import SwiftUI
 // on top of their toast to place it where they would
 // like it to go
 
-// I have to manually create the assets and it's rather
-// late at the moment - so I'll do it tomorrow but here's
-// placeholder text for now!
-
-// 51:22 - struct setup
-// 53:54 - dependencies
-// 54:82 - container view
-
 struct EggPlacementView: View {
 	@State private var dragUnitPoint = UnitPoint.center
+	
+	// @GestureState is a property wrapper meant to work
+	// specifically with types that conform to Gesture
+	// One of the perks of using it is that it returns to
+	// its initial value after the drag event
+	@GestureState private var dragOffset: CGSize = .zero
+	
+	// since @GestureState returns back to its initial
+	// state - this property will keep track of our
+	// accumulated drag translation and update the view's
+	// offset accordingly
+	@State private var accumulatedDragTranslation: CGSize = .zero
+	
+	// our drag gesture - keeping type hidden using opaque
+	// type
 	private var dragGesture: some Gesture {
 		DragGesture()
-			.onChanged {
-				self.dragUnitPoint = UnitPoint(x: $0.location.x,
-																			 y: $0.location.y)
+			.updating($dragOffset) { (value, state, transaction) in
+				// maintaining property state as user drags
+				// state will return back to initial value
+				// after drag event
+				state = value.translation
+				print(value.translation)
+			}
+		.onEnded { val in
+			// update our property that's keeping track of
+			// the accumulated translation so we can update
+			// the offset of the view accordingly
+			self.accumulatedDragTranslation.width += val.translation.width
+			self.accumulatedDragTranslation.height += val.translation.height
 		}
 	}
 	
@@ -40,8 +57,10 @@ struct EggPlacementView: View {
 				.resizable()
 				.aspectRatio(1.0, contentMode: .fit)
 				.frame(width: 250)
-				.position(CGPoint(x: self.dragUnitPoint.x,
-													y: self.dragUnitPoint.y))
+				// since dragOffset resets to initial value
+				// we have to keep track of translation ourselves
+				.offset(x: self.dragOffset.width + self.accumulatedDragTranslation.width,
+								y: self.dragOffset.height + self.accumulatedDragTranslation.height)
 				.gesture(self.dragGesture)
 		}
 		.padding([.leading, .trailing])
