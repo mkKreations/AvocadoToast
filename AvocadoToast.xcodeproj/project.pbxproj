@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2CAE41DB248F0F150032F791 /* OrderDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE41DA248F0F150032F791 /* OrderDatasource.swift */; };
 		2CC7CED3248429480048BB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED2248429480048BB77 /* AppDelegate.swift */; };
 		2CC7CED5248429480048BB77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED4248429480048BB77 /* SceneDelegate.swift */; };
 		2CC7CED7248429480048BB77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED6248429480048BB77 /* ContentView.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CAE41DA248F0F150032F791 /* OrderDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDatasource.swift; sourceTree = "<group>"; };
 		2CC7CECF248429480048BB77 /* AvocadoToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvocadoToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7CED2248429480048BB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC7CED4248429480048BB77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				2CFEA5022484A72C00D7DCC9 /* Bread.swift */,
 				2CFEA5042484A7C700D7DCC9 /* Spread.swift */,
 				2CFEA5062484A9AA00D7DCC9 /* Avocado.swift */,
+				2CAE41DA248F0F150032F791 /* OrderDatasource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				2CFEA5012484677100D7DCC9 /* OrderCell.swift in Sources */,
 				2CFEA4F82484575F00D7DCC9 /* CompletedOrder.swift in Sources */,
 				2CFEA4FB24845B6E00D7DCC9 /* Date+extensions.swift in Sources */,
+				2CAE41DB248F0F150032F791 /* OrderDatasource.swift in Sources */,
 				2CFEA5032484A72C00D7DCC9 /* Bread.swift in Sources */,
 				2CFEA4F6248456D700D7DCC9 /* Order.swift in Sources */,
 				2CFEA4F5248456D700D7DCC9 /* OrderHistory.swift in Sources */,

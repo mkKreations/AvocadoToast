@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 // this struct will serve as the model
 
@@ -17,7 +18,9 @@ import Foundation
 struct Order {
 	var includesSalt: Bool
 	var includesRedPepperFlakes: Bool
+	var includesEgg: Bool
 	var quantity: Int
+	var eggLocation: CGSize
 	// our model enum types
 	var bread: Bread
 	var spread: Spread
@@ -31,7 +34,9 @@ struct Order {
 extension Order {
 	static let sampleOrder = Order(includesSalt: true,
 																 includesRedPepperFlakes: false,
+																 includesEgg: false,
 																 quantity: 1,
+																 eggLocation: .zero,
 																 bread: .wheat,
 																 spread: .chutney,
 																 avocado: .mashed)

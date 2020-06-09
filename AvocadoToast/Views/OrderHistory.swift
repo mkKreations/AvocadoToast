@@ -13,22 +13,24 @@ import SwiftUI
 // made orders
 
 struct OrderHistory: View {
-	// no need for property wrapper - just displaying data
-	let completedOrders: [CompletedOrder]
+	// this is the essentially our global model
+	// could have used @EnvironmentObject as well
+	@ObservedObject var orderDatasource: OrderDatasource
 	
 	var body: some View {
-		List(completedOrders) { order in
+		List(orderDatasource.completedOrders) { order in
 			OrderCell(order: order)
 		}
+		.navigationBarTitle("Previous Orders")
 	}
 }
 
 struct OrderHistory_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+			OrderHistory(orderDatasource: OrderDatasource())
 //				.environment(\.colorScheme, .dark)
-			OrderHistory(completedOrders: CompletedOrder.sampleOrders)
+			OrderHistory(orderDatasource: OrderDatasource())
 				.previewDevice("iPhone Xs Max")
 				.environment(\.colorScheme, .dark)
 		}

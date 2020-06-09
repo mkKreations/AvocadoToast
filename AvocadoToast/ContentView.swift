@@ -9,12 +9,34 @@
 import SwiftUI
 
 struct ContentView: View {
-	// this view struct is the source of truth
-	@State private var order = Order.sampleOrder
+	// this is the source of truth
+	@ObservedObject var orderDatasource: OrderDatasource = OrderDatasource()
 	
 	var body: some View {
-		// state kept in sync via binding
-		OrderForm(order: $order)
+		// embedding our views in tabView
+		TabView {
+			NavigationView {
+				OrderForm(orderDatasource: orderDatasource)
+			}
+			.tabItem {
+				VStack {
+					// good ol SF symbols
+					Image(systemName: "square.and.pencil")
+					Text("New Order")
+				}
+			}
+			
+			NavigationView {
+				OrderHistory(orderDatasource: orderDatasource)
+			}
+			.tabItem {
+				VStack {
+					// good ol SF symbols
+					Image(systemName: "clock.fill")
+					Text("History")
+				}
+			}
+		}
 	}
 }
 

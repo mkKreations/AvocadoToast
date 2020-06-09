@@ -10,7 +10,13 @@ import Foundation
 
 // this enum will represent a topping
 
-enum Topping {
+// conformance to Identifiable so it
+// can be used with ForEach
+
+enum Topping: Identifiable {
+	var id: Topping {
+		return self
+	}
 	case salt
 	case redPepperFlakes
 	case eggs
