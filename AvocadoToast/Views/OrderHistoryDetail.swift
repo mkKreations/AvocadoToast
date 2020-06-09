@@ -17,10 +17,21 @@ struct OrderHistoryDetail: View {
 			Section(header: Text("SUMMARY")) {
 				HStack {
 					Text("Bread")
-					
 					Spacer()
-					
-//					Text(completedOrder.brea)
+					Text(completedOrder.bread.rawValue)
+						.foregroundColor(.secondary)
+				}
+				HStack {
+					Text("Spread")
+					Spacer()
+					Text(completedOrder.spread.rawValue)
+						.foregroundColor(.secondary)
+				}
+				HStack {
+					Text("Avocado")
+					Spacer()
+					Text(completedOrder.avocado.rawValue)
+						.foregroundColor(.secondary)
 				}
 			}
 		}
