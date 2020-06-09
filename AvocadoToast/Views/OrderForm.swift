@@ -28,25 +28,7 @@ struct OrderForm: View {
 			}
 			
 			Section {
-				Toggle(isOn: $order.includesSalt) {
-					Text("Include Salt")
-				}
-				Toggle(isOn: $order.includesRedPepperFlakes) {
-					Text("Include Red Pepper Flakes")
-				}
-				// pass an animation() with the binding so
-				// that upon state change - you receive an
-				// animation
-				Toggle(isOn: $order.includesEgg.animation()) {
-					Text("Include Egg")
-				}
-				if order.includesEgg {
-					// we will navigate over to this screen if the
-					// user wants an egg included
-					NavigationLink(destination: EggPlacementView(eggLocation: $order.eggLocation)) {
-						Text("Place my egg!")
-					}
-				}
+				OrderFormToggleSection(order: $order)
 			}
 			
 			Section {
