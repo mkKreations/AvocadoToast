@@ -22,7 +22,14 @@ struct EggPositionView: View {
 		EggPlacementView(eggLocation: $eggLocation)
 			.navigationBarItems(trailing:
 				Button("Reset") {
-					print("Reset tapped!")
+					// a little animation to keep things schnazzy & classy
+					withAnimation {
+						// one of the many benefits of using SwiftUI here
+						// just updating the state of a property wrapped
+						// value automatically updates the UI - even if
+						// the UI is located in another type
+						self.eggLocation = .zero
+					}
 				}
 		)
 	}
