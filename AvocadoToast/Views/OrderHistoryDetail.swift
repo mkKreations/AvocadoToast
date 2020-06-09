@@ -15,24 +15,7 @@ struct OrderHistoryDetail: View {
 	var body: some View {
 		Form {
 			Section(header: Text("SUMMARY")) {
-				HStack {
-					Text("Bread")
-					Spacer()
-					Text(completedOrder.bread.rawValue)
-						.foregroundColor(.secondary)
-				}
-				HStack {
-					Text("Spread")
-					Spacer()
-					Text(completedOrder.spread.rawValue)
-						.foregroundColor(.secondary)
-				}
-				HStack {
-					Text("Avocado")
-					Spacer()
-					Text(completedOrder.avocado.rawValue)
-						.foregroundColor(.secondary)
-				}
+				OrderDetailMainSection(completedOrder: completedOrder)
 			}
 		}
 	}
@@ -42,7 +25,7 @@ struct OrderHistoryDetail_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
 			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[0])
-			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[0])
+			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[1])
 				.previewDevice("iPhone Xs Max")
 		}
 	}

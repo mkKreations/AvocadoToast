@@ -15,6 +15,7 @@ import SwiftUI
 // components
 
 struct OrderFormMainSection: View {
+	// need a @Binding here to pass to Picker's
 	@Binding var order: Order
 	
 	var body: some View {
