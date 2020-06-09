@@ -88,8 +88,32 @@ struct OrderForm: View {
 		.navigationBarTitle("Avocado Toast")
 	}
 	
+	// format order name
+	private var formattedOrderName: String {
+		return "\(order.bread.rawValue) with \(order.spread.rawValue)"
+	}
+	// gather toppings for order
+	private var getOrderToppings: [Topping] {
+		var tmp = [Topping]()
+		if order.includesSalt {
+			tmp.append(Topping.salt)
+		}
+		if order.includesRedPepperFlakes {
+			tmp.append(Topping.redPepperFlakes)
+		}
+		if order.includesEgg {
+			tmp.append(Topping.eggs)
+		}
+		return tmp
+	}
+	
 	private func submitOrder() {
-		print("Order submitted!")
+		// create CompletedOrder
+		let completedOrder = CompletedOrder(name: formattedOrderName,
+																				timePlaced: Date(),
+																				toppings: getOrderToppings)
+		// append to global datasource
+		orderDatasource.completedOrders.append(completedOrder)
 	}
 }
 
