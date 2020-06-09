@@ -24,7 +24,7 @@ struct OrderForm: View {
 	var body: some View {
 		Form {
 			Section {
-				OrderMainSection(order: $order)
+				OrderFormMainSection(order: $order)
 			}
 			
 			Section {

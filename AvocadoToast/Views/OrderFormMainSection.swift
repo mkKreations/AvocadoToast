@@ -14,7 +14,7 @@ import SwiftUI
 // better to create small, reusable view
 // components
 
-struct OrderMainSection: View {
+struct OrderFormMainSection: View {
 	@Binding var order: Order
 	
 	var body: some View {
