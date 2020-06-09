@@ -8,12 +8,15 @@
 
 import SwiftUI
 
-struct ContentView: View {	
+struct ContentView: View {
+	// this is the source of truth
+	@ObservedObject var orderDatasource: OrderDatasource = OrderDatasource()
+	
 	var body: some View {
 		// embedding our views in tabView
 		TabView {
 			NavigationView {
-				OrderForm()				
+				OrderForm(orderDatasource: orderDatasource)
 			}
 			.tabItem {
 				VStack {
@@ -24,7 +27,7 @@ struct ContentView: View {
 			}
 			
 			NavigationView {
-				OrderHistory()
+				OrderHistory(orderDatasource: orderDatasource)
 			}
 			.tabItem {
 				VStack {
