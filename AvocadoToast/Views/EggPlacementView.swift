@@ -33,6 +33,11 @@ struct EggPlacementView: View {
 	// when it is being updated in the DragGesture .updating
 	@GestureState private var dragOffset: CGSize = .zero
 	
+	// environemnt variable to track isEnabled
+	// automatically refreshes any views that
+	// depend on its state
+	@Environment(\.isEnabled) private var isEnabled: Bool
+	
 	// our drag gesture - keeping type hidden using opaque
 	// type but compiler knows
 	private var dragGesture: some Gesture {
@@ -79,6 +84,7 @@ struct EggPlacementView: View {
 		// prevent dragging outside the bounds of the view
 		.frame(minHeight: 0, idealHeight: .infinity, maxHeight: .infinity)
 		.padding([.leading, .trailing])
+		.saturation(isEnabled ? 1.0 : 0.2)
 	}
 }
 
