@@ -18,10 +18,15 @@ struct OrderHistoryDetail: View {
 				OrderDetailMainSection(completedOrder: completedOrder)
 			}
 
-			Section(header: Text("EXTRAS")) {
-				OrderDetailExtrasSection(completedOrder: completedOrder)
+			if completedOrder.toppings.count > 0 {
+				Section(header: Text("EXTRAS")) {
+					OrderDetailExtrasSection(completedOrder: completedOrder)
+				}
 			}
 		}
+		.padding(.top)
+		.navigationBarTitle(Text(completedOrder.timePlaced.formattedDate()),
+												displayMode: .inline)
 	}
 }
 
