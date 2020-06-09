@@ -23,6 +23,10 @@ struct OrderDetailExtrasSection: View {
 	}
 }
 
+// the previews display one Topping per preview
+// but when this view is within a Section, all
+// Topping's are grouped together
+
 struct OrderDetailExtrasSection_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
