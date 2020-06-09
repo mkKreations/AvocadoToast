@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct OrderHistoryDetail: View {
+	// no need for property wrapper - just displaying data
+	var completedOrder: CompletedOrder
+	
 	var body: some View {
 		Text("OrderHistoryDetail")
 	}
@@ -17,8 +20,8 @@ struct OrderHistoryDetail: View {
 struct OrderHistoryDetail_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistoryDetail()
-			OrderHistoryDetail()
+			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[0])
+			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[0])
 				.previewDevice("iPhone Xs Max")
 		}
 	}

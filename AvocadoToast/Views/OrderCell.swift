@@ -16,20 +16,22 @@ struct OrderCell: View {
 	var order: CompletedOrder
 	
 	var body: some View {
-		HStack {
-			VStack(alignment: .leading) {
-				Text(order.name)
-				Text(order.timePlaced.formattedDate())
-					.font(.subheadline)
-					.foregroundColor(.secondary)
-			}
-			
-			// still learning the power of spacers
-			Spacer()
+		NavigationLink(destination: OrderHistoryDetail(completedOrder: order)) {
+			HStack {
+				VStack(alignment: .leading) {
+					Text(order.name)
+					Text(order.timePlaced.formattedDate())
+						.font(.subheadline)
+						.foregroundColor(.secondary)
+				}
+				
+				// still learning the power of spacers
+				Spacer()
 
-			// add toppings to cell
-			ForEach(self.order.toppings) { topping in
-				ToppingIcon(topping: topping)
+				// add toppings to cell
+				ForEach(self.order.toppings) { topping in
+					ToppingIcon(topping: topping)
+				}
 			}
 		}
 	}
