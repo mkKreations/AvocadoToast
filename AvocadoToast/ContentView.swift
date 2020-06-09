@@ -10,12 +10,14 @@ import SwiftUI
 
 struct ContentView: View {	
 	var body: some View {
+		// embedding our views in tabView
 		TabView {
 			NavigationView {
-				OrderForm()
+				OrderForm()				
 			}
 			.tabItem {
 				VStack {
+					// good ol SF symbols
 					Image(systemName: "square.and.pencil")
 					Text("New Order")
 				}
@@ -26,6 +28,7 @@ struct ContentView: View {
 			}
 			.tabItem {
 				VStack {
+					// good ol SF symbols
 					Image(systemName: "clock.fill")
 					Text("History")
 				}
