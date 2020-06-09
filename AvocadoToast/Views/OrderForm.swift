@@ -24,53 +24,11 @@ struct OrderForm: View {
 	var body: some View {
 		Form {
 			Section {
-				// KNOWN ISSUE:
-				// the layout jumps after navigating to
-				// the options of a picker after selecting
-				// the picker row in the form
-				
-				// as far as I know, this is a problem with
-				// SwiftUI
-				Picker("Bread", selection: $order.bread) {
-					ForEach(Bread.allCases) { bread in
-						Text(bread.rawValue)
-							.tag(bread) // make sure to add tag to uniquely id each case
-					}
-				}
-				Picker("Spread", selection: $order.spread) {
-					ForEach(Spread.allCases) { spread in
-						Text(spread.rawValue)
-							.tag(spread)
-					}
-				}
-				Picker("Avocado", selection: $order.avocado) {
-					ForEach(Avocado.allCases) { avocado in
-						Text(avocado.rawValue)
-							.tag(avocado)
-					}
-				}
+				OrderFormMainSection(order: $order)
 			}
 			
 			Section {
-				Toggle(isOn: $order.includesSalt) {
-					Text("Include Salt")
-				}
-				Toggle(isOn: $order.includesRedPepperFlakes) {
-					Text("Include Red Pepper Flakes")
-				}
-				// pass an animation() with the binding so
-				// that upon state change - you receive an
-				// animation
-				Toggle(isOn: $order.includesEgg.animation()) {
-					Text("Include Egg")
-				}
-				if order.includesEgg {
-					// we will navigate over to this screen if the
-					// user wants an egg included
-					NavigationLink(destination: EggPlacementView(eggLocation: $order.eggLocation)) {
-						Text("Place my egg!")
-					}
-				}
+				OrderFormToggleSection(order: $order)
 			}
 			
 			Section {
