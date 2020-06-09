@@ -70,7 +70,10 @@ struct OrderForm: View {
 		let completedOrder = CompletedOrder(name: formattedOrderName,
 																				timePlaced: Date(),
 																				eggLocation: order.eggLocation,
-																				toppings: getOrderToppings)
+																				toppings: getOrderToppings,
+																				bread: order.bread,
+																				spread: order.spread,
+																				avocado: order.avocado)
 		// append to global datasource
 		orderDatasource.completedOrders.append(completedOrder)
 	}

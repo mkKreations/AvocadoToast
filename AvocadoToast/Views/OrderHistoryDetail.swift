@@ -13,7 +13,17 @@ struct OrderHistoryDetail: View {
 	var completedOrder: CompletedOrder
 	
 	var body: some View {
-		Text("OrderHistoryDetail")
+		Form {
+			Section(header: Text("SUMMARY")) {
+				HStack {
+					Text("Bread")
+					
+					Spacer()
+					
+//					Text(completedOrder.brea)
+				}
+			}
+		}
 	}
 }
 
