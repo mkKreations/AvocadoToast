@@ -34,7 +34,7 @@ struct OrderFormToggleSection: View {
 			if order.includesEgg {
 				// we will navigate over to this screen if the
 				// user wants an egg included
-				NavigationLink(destination: EggPlacementView(eggLocation: $order.eggLocation)) {
+				NavigationLink(destination: EggPositionView(eggLocation: $order.eggLocation)) {
 					Text("Place my egg!")
 				}
 			}
