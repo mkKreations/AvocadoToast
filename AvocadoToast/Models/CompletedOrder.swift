@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreGraphics
 
 // this model struct will represent
 // a completed order
@@ -19,6 +20,7 @@ struct CompletedOrder: Identifiable {
 	
 	var name: String
 	var timePlaced: Date
+	var eggLocation: CGSize
 	var toppings: [Topping] = [] // using our Topping model
 }
 
@@ -28,47 +30,51 @@ struct CompletedOrder: Identifiable {
 extension CompletedOrder {
 	static let sampleOrders = [
 		
-//		CompletedOrder(name: "Rye with Almond Butter",
-//									 timePlaced: Date(),
-//									 toppings: [.salt, .redPepperFlakes]),
-//
-//		CompletedOrder(name: "Multi-Grain with Hummus",
-//									 timePlaced: Date(),
-//									 toppings: [.redPepperFlakes]),
-//
-//		CompletedOrder(name: "Multi-Grain Toast",
-//									 timePlaced: Date(),
-//									 toppings: [.salt]),
-//
-//		CompletedOrder(name: "Sourdough with Chutney",
-//									 timePlaced: Date(),
-//									 toppings: [.salt, .redPepperFlakes]),
+		//		CompletedOrder(name: "Rye with Almond Butter",
+		//									 timePlaced: Date(),
+		//									 toppings: [.salt, .redPepperFlakes]),
+		//
+		//		CompletedOrder(name: "Multi-Grain with Hummus",
+		//									 timePlaced: Date(),
+		//									 toppings: [.redPepperFlakes]),
+		//
+		//		CompletedOrder(name: "Multi-Grain Toast",
+		//									 timePlaced: Date(),
+		//									 toppings: [.salt]),
+		//
+		//		CompletedOrder(name: "Sourdough with Chutney",
+		//									 timePlaced: Date(),
+		//									 toppings: [.salt, .redPepperFlakes]),
 		
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
+									 eggLocation: .zero,
 									 toppings: [.salt, .redPepperFlakes, .eggs]),
 		
-//		CompletedOrder(name: "Wheat with Tapenade",
-//									 timePlaced: Date(),
-//									 toppings: [.eggs]),
-//
-//		CompletedOrder(name: "Sourdough with Vegemite",
-//									 timePlaced: Date(),
-//									 toppings: [.salt]),
+		//		CompletedOrder(name: "Wheat with Tapenade",
+		//									 timePlaced: Date(),
+		//									 toppings: [.eggs]),
+		//
+		//		CompletedOrder(name: "Sourdough with Vegemite",
+		//									 timePlaced: Date(),
+		//									 toppings: [.salt]),
 		
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
+									 eggLocation: .zero,
 									 toppings: [.salt, .redPepperFlakes, .eggs]),
 		
 		CompletedOrder(name: "Rye with Honey",
-									 timePlaced: Date()),
-//
-//		CompletedOrder(name: "Multi-Grain Toast",
-//									 timePlaced: Date(),
-//									 toppings: [.salt, .eggs]),
-//
-//		CompletedOrder(name: "Sourdough with Chutney",
-//									 timePlaced: Date()),
+									 timePlaced: Date(),
+									 eggLocation: .zero),
+		
+		//
+		//		CompletedOrder(name: "Multi-Grain Toast",
+		//									 timePlaced: Date(),
+		//									 toppings: [.salt, .eggs]),
+		//
+		//		CompletedOrder(name: "Sourdough with Chutney",
+		//									 timePlaced: Date()),
 		
 	]
 }
