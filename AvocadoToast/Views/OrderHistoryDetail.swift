@@ -17,6 +17,10 @@ struct OrderHistoryDetail: View {
 			Section(header: Text("SUMMARY")) {
 				OrderDetailMainSection(completedOrder: completedOrder)
 			}
+
+			Section(header: Text("EXTRAS")) {
+				Text("Extras Section")
+			}
 		}
 	}
 }

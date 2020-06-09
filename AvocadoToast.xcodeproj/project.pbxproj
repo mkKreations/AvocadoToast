@@ -13,6 +13,7 @@
 		2CBAB3D9248F469C00E4F040 /* EggPositionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBAB3D8248F469C00E4F040 /* EggPositionView.swift */; };
 		2CBAB3DB24901F6A00E4F040 /* OrderHistoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBAB3DA24901F6A00E4F040 /* OrderHistoryDetail.swift */; };
 		2CBAB3DD249028CE00E4F040 /* OrderDetailMainSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBAB3DC249028CE00E4F040 /* OrderDetailMainSection.swift */; };
+		2CBAB3DF24902AEB00E4F040 /* OrderDetailExtrasSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CBAB3DE24902AEB00E4F040 /* OrderDetailExtrasSection.swift */; };
 		2CC7CED3248429480048BB77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED2248429480048BB77 /* AppDelegate.swift */; };
 		2CC7CED5248429480048BB77 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED4248429480048BB77 /* SceneDelegate.swift */; };
 		2CC7CED7248429480048BB77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7CED6248429480048BB77 /* ContentView.swift */; };
@@ -40,6 +41,7 @@
 		2CBAB3D8248F469C00E4F040 /* EggPositionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggPositionView.swift; sourceTree = "<group>"; };
 		2CBAB3DA24901F6A00E4F040 /* OrderHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetail.swift; sourceTree = "<group>"; };
 		2CBAB3DC249028CE00E4F040 /* OrderDetailMainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailMainSection.swift; sourceTree = "<group>"; };
+		2CBAB3DE24902AEB00E4F040 /* OrderDetailExtrasSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailExtrasSection.swift; sourceTree = "<group>"; };
 		2CC7CECF248429480048BB77 /* AvocadoToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvocadoToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7CED2248429480048BB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC7CED4248429480048BB77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				2CBAB3D8248F469C00E4F040 /* EggPositionView.swift */,
 				2CBAB3DA24901F6A00E4F040 /* OrderHistoryDetail.swift */,
 				2CBAB3DC249028CE00E4F040 /* OrderDetailMainSection.swift */,
+				2CBAB3DE24902AEB00E4F040 /* OrderDetailExtrasSection.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				2CFEA5052484A7C700D7DCC9 /* Spread.swift in Sources */,
 				2CBAB3D5248F1A9C00E4F040 /* OrderFormMainSection.swift in Sources */,
+				2CBAB3DF24902AEB00E4F040 /* OrderDetailExtrasSection.swift in Sources */,
 				2CBAB3D7248F1B1E00E4F040 /* OrderFormToggleSection.swift in Sources */,
 				2CFEA5072484A9AA00D7DCC9 /* Avocado.swift in Sources */,
 				2CFEA4FD24845DF800D7DCC9 /* Topping.swift in Sources */,

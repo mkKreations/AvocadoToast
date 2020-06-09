@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+// this view struct will display the
+// primary options a user chose for
+// their Order
+
 struct OrderDetailMainSection: View {
 	// no property wrapper here
 	// just displaying data
