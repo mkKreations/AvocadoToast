@@ -118,6 +118,15 @@ extension CompletedOrder {
 									 bread: .multi_grain,
 									 spread: .hummus,
 									 avocado: .mashed),
+		
+		CompletedOrder(name: "Rye with Almond Butter",
+									 timePlaced: Date(timeIntervalSinceNow: -2937838),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes],
+									 bread: .rye,
+									 spread: .almond_butter,
+									 avocado: .mashed),
 
 		CompletedOrder(name: "White Toast with Almou",
 									 timePlaced: Date(timeIntervalSinceNow: -2737838),
@@ -126,6 +135,15 @@ extension CompletedOrder {
 									 toppings: [.salt],
 									 bread: .white,
 									 spread: .almou,
+									 avocado: .sliced),
+		
+		CompletedOrder(name: "Sourdough with Chutney",
+									 timePlaced: Date(timeIntervalSinceNow: -1627838),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes, .eggs],
+									 bread: .sourdough,
+									 spread: .chutney,
 									 avocado: .sliced),
 		
 	]
