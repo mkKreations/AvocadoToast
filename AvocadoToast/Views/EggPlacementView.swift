@@ -59,32 +59,39 @@ struct EggPlacementView: View {
 	
 	// all our UI goods
 	var body: some View {
-		ZStack {
-			Image("Rye_Full")
-				.resizable()
-				.scaledToFit()
-			
-			Image("Egg")
-				.resizable()
-				.aspectRatio(1.0, contentMode: .fit)
-				.frame(width: 250)
-				// since dragOffset resets to initial value
-				// we have to keep track of translation ourselves
-				.offset(x: self.dragOffset.width + self.eggLocation.width,
-								y: self.dragOffset.height + self.eggLocation.height)
-				.gesture(self.dragGesture)
+		// embedded in GeometryReader so we can determine
+		// the size of subviews using the frame of the
+		// parent
+		GeometryReader { geo in
+			ZStack {
+				Image("Rye_Full")
+					.resizable()
+					.scaledToFit()
+				
+				Image("Egg")
+					.resizable()
+					.aspectRatio(1.0, contentMode: .fit)
+					// have frame be proportional to parent as opposed to explicit
+					// value - also, the frame depends on which value is smaller
+					.frame(width: min(geo.size.width / 1.8, geo.size.height / 1.8))
+					// since dragOffset resets to initial value
+					// we have to keep track of translation ourselves
+					.offset(x: self.dragOffset.width + self.eggLocation.width,
+									y: self.dragOffset.height + self.eggLocation.height)
+					.gesture(self.dragGesture)
+			}
+			// setting flexible height for ZStack frame as current solution to TODO
+			// this allows user to place egg nearly anywhere on screen (vertically)
+			// and still be able to interact with it
+			// before - the ZStack was the height of the largest Image (the bread)
+			// and if user dragged the egg outside the bounds - then they couldn't
+			// interact with it
+			// overall, I want to remove setting flexible height for frame and instead
+			// prevent dragging outside the bounds of the view
+			.frame(minHeight: 0, idealHeight: .infinity, maxHeight: .infinity)
+			.padding()
+			.saturation(self.isEnabled ? 1.0 : 0.2)
 		}
-		// setting flexible height for ZStack frame as current solution to TODO
-		// this allows user to place egg nearly anywhere on screen (vertically)
-		// and still be able to interact with it
-		// before - the ZStack was the height of the largest Image (the bread)
-		// and if user dragged the egg outside the bounds - then they couldn't
-		// interact with it
-		// overall, I want to remove setting flexible height for frame and instead
-		// prevent dragging outside the bounds of the view
-		.frame(minHeight: 0, idealHeight: .infinity, maxHeight: .infinity)
-		.padding([.leading, .trailing])
-		.saturation(isEnabled ? 1.0 : 0.2)
 	}
 }
 

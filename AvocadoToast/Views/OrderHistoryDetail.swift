@@ -36,7 +36,7 @@ struct OrderHistoryDetail: View {
 			Section(header: Text("SUMMARY")) {
 				OrderDetailMainSection(completedOrder: completedOrder)
 			}
-
+			
 			// only display if we have Toppings
 			if completedOrder.toppings.count > 0 {
 				Section(header: Text("EXTRAS")) {
@@ -46,14 +46,36 @@ struct OrderHistoryDetail: View {
 			
 			// "can't use closure using control flow statement within
 			// ViewBuilder param" - basically means that I can't use
-			// optional chaining to capture a variable within a ViewBuilder -
-			// instead have to directly check against nil & extract return
+			// optional chaining to unwrap an optional within a ViewBuilder -
+			// instead have to directly check against nil & unwrap optional
 			// explicitly within code block
 			if orderDatasource.lastOrderedDate(forCompletedOrder: completedOrder) != nil {
 				Section(header: Text("LAST ORDERED ON")) {
 					// we're forecefully extacting here because we know we
 					// will have a Date value - check computed property
 					Text(lastOrderedDate.formattedHistoryDetailDate())
+				}
+			}
+			
+			// only show if eggs is a topping
+			if completedOrder.toppings.contains(Topping.eggs) {
+				// I do not like passing a binding like this but... in this
+				// case, the binding will not be updated - it will only be
+				// used to display data. Should I have another init with no binding??
+				
+				// disabling the view here cuz no editing will be happening
+				// just displaying data
+				Section(header: Text("Egg")) {
+					EggPlacementView(eggLocation: Binding.constant(self.completedOrder.eggLocation))
+						// setting height here because View lays out correctly
+						// horizontally but the original height is very small
+						// one thing to note.. the width will always lay out
+						// correctly - despite any absurd values passed in for
+						// the height, so it's really just a matter of determining
+						// at what height value does the view layout correctly or
+						// essentially look good
+						.frame(height: 350)
+						.disabled(true)
 				}
 			}
 		}
@@ -66,8 +88,8 @@ struct OrderHistoryDetail: View {
 struct OrderHistoryDetail_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[0])
-			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[1])
+			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[4])
+			OrderHistoryDetail(completedOrder: CompletedOrder.sampleOrders[5])
 				.previewDevice("iPhone Xs Max")
 		}
 	}
