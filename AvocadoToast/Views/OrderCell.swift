@@ -20,7 +20,7 @@ struct OrderCell: View {
 			HStack {
 				VStack(alignment: .leading) {
 					Text(order.name)
-					Text(order.timePlaced.formattedDate())
+					Text(order.timePlaced.formattedHistoryDate())
 						.font(.subheadline)
 						.foregroundColor(.secondary)
 				}

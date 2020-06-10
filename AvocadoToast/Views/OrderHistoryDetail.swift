@@ -53,12 +53,12 @@ struct OrderHistoryDetail: View {
 				Section(header: Text("LAST ORDERED ON")) {
 					// we're forecefully extacting here because we know we
 					// will have a Date value - check computed property
-					Text(lastOrderedDate.formattedDate())
+					Text(lastOrderedDate.formattedHistoryDetailDate())
 				}
 			}
 		}
 		.padding(.top)
-		.navigationBarTitle(Text(completedOrder.timePlaced.formattedDate()),
+		.navigationBarTitle(Text(completedOrder.timePlaced.formattedHistoryDate()),
 												displayMode: .inline)
 	}
 }
