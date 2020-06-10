@@ -35,22 +35,15 @@ struct ToppingIcon: View {
 	// new ToppingIcon just add a new case
 	// to the Topping enum and then cover
 	// that new case here in visualConfig
-	private var visualConfig: (backgroundColor: Color, displayText: String) {
+	private var visualConfig: (backgroundColor: Color, displayText: String, foregroundColor: Color) {
 		switch topping {
 		case .salt:
-			return (.primary, "S")
+			return (.primary, "S", colorScheme == .dark ? .black : .white)
 		case .redPepperFlakes:
-			return (.red, "R")
+			return (.red, "R", .white)
 		case .eggs:
-			return (.yellow, "E")
+			return (.yellow, "E", .white)
 		}
-	}
-	private var foregroundColor: Color {
-		// had to make this computed var for this one condition
-		if colorScheme == .dark && topping == .salt {
-			return .black
-		}
-		return .white
 	}
 	private let size: CGFloat = 25
 	
@@ -64,7 +57,7 @@ struct ToppingIcon: View {
 			
 			Text(self.visualConfig.displayText)
 				.font(.subheadline)
-				.foregroundColor(foregroundColor)
+				.foregroundColor(self.visualConfig.foregroundColor)
 		}
 		.frame(width: size, height: size)
 	}
