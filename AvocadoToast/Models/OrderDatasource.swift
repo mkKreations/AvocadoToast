@@ -21,6 +21,8 @@ import Foundation
 // their view subscribers to update
 
 class OrderDatasource: ObservableObject {
+	// publish the changes to the value of this
+	// property to any View subscribers
 	@Published var completedOrders = CompletedOrder.sampleOrders
 	
 	// we return the most recent time a user ordered
