@@ -25,6 +25,7 @@ class CompletedOrder: Identifiable {
 	var name: String
 	var timePlaced: Date
 	var eggLocation: CGSize
+	var quantity: Int
 	// our model enum types
 	var toppings: [Topping]
 	var bread: Bread
@@ -35,6 +36,7 @@ class CompletedOrder: Identifiable {
 		name: String,
 		timePlaced: Date,
 		eggLocation: CGSize,
+		quantity: Int,
 		toppings: [Topping] = [],
 		bread: Bread,
 		spread: Spread,
@@ -43,6 +45,7 @@ class CompletedOrder: Identifiable {
 		self.name = name
 		self.timePlaced = timePlaced
 		self.eggLocation = eggLocation
+		self.quantity = quantity
 		self.toppings = toppings
 		self.bread = bread
 		self.spread = spread
@@ -75,6 +78,7 @@ extension CompletedOrder: Equatable {
 				lhs.name == rhs.name &&
 //				lhs.timePlaced == rhs.timePlaced &&
 //				lhs.eggLocation == rhs.eggLocation &&
+//				lhs.quantity == rhs.quantity &&
 				lhs.toppings == rhs.toppings &&
 				lhs.bread == rhs.bread &&
 				lhs.spread == rhs.spread &&
@@ -115,6 +119,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Rye with Almond Butter",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -123,6 +128,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Multi-Grain with Hummus",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 2,
 									 toppings: [.redPepperFlakes],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -131,6 +137,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 5,
 									 toppings: [.salt],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -139,6 +146,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -147,6 +155,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 3,
 									 toppings: [.salt, .redPepperFlakes, .eggs],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -155,6 +164,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Wheat with Tapenade",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 2,
 									 toppings: [.eggs],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -163,6 +173,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Sourdough with Vegemite",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 toppings: [.salt],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -171,6 +182,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes, .eggs],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -179,6 +191,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Rye with Honey",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 3,
 									 bread: .sourdough,
 									 spread: .hummus,
 									 avocado: .mashed),
@@ -186,6 +199,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Multi-Grain Toast",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 toppings: [.salt, .eggs],
 									 bread: .sourdough,
 									 spread: .hummus,
@@ -194,6 +208,7 @@ extension CompletedOrder {
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(),
 									 eggLocation: .zero,
+									 quantity: 1,
 									 bread: .sourdough,
 									 spread: .hummus,
 									 avocado: .mashed),

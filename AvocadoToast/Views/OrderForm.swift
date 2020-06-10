@@ -69,6 +69,7 @@ struct OrderForm: View {
 		let completedOrder = CompletedOrder(name: formattedOrderName,
 																				timePlaced: Date(),
 																				eggLocation: order.eggLocation,
+																				quantity: order.quantity,
 																				toppings: getOrderToppings,
 																				bread: order.bread,
 																				spread: order.spread,
