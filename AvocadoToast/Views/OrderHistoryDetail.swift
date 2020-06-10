@@ -18,6 +18,7 @@ struct OrderHistoryDetail: View {
 				OrderDetailMainSection(completedOrder: completedOrder)
 			}
 
+			// only display if we have Toppings
 			if completedOrder.toppings.count > 0 {
 				Section(header: Text("EXTRAS")) {
 					OrderDetailExtrasSection(completedOrder: completedOrder)
