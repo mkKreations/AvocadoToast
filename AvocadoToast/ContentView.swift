@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
-	// this is the source of truth
-	@ObservedObject var orderDatasource: OrderDatasource = OrderDatasource()
+	@EnvironmentObject var orderDatasource: OrderDatasource
 	
 	var body: some View {
 		// embedding our views in tabView
 		TabView {
 			NavigationView {
-				OrderForm(orderDatasource: orderDatasource)
+				OrderForm()
+					// pass object to be accessible in environment
+					.environmentObject(orderDatasource)
 			}
 			.tabItem {
 				VStack {
@@ -27,7 +28,9 @@ struct ContentView: View {
 			}
 			
 			NavigationView {
-				OrderHistory(orderDatasource: orderDatasource)
+				OrderHistory()
+					// pass object to be accessible in environment
+					.environmentObject(orderDatasource)
 			}
 			.tabItem {
 				VStack {

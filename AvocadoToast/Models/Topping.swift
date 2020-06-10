@@ -13,11 +13,14 @@ import Foundation
 // conformance to Identifiable so it
 // can be used with ForEach
 
-enum Topping: Identifiable {
+// using String raw value for text
+// representation
+
+enum Topping: String, Identifiable {
 	var id: Topping {
 		return self
 	}
-	case salt
-	case redPepperFlakes
-	case eggs
+	case salt = "Salt"
+	case redPepperFlakes = "Red Pepper Flakes"
+	case eggs = "Eggs"
 }

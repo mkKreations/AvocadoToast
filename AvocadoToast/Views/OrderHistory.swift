@@ -13,9 +13,8 @@ import SwiftUI
 // made orders
 
 struct OrderHistory: View {
-	// this is the essentially our global model
-	// could have used @EnvironmentObject as well
-	@ObservedObject var orderDatasource: OrderDatasource
+	// this is our global model
+	@EnvironmentObject var orderDatasource: OrderDatasource
 	
 	var body: some View {
 		List(orderDatasource.completedOrders) { order in
@@ -28,9 +27,9 @@ struct OrderHistory: View {
 struct OrderHistory_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
-			OrderHistory(orderDatasource: OrderDatasource())
+			OrderHistory()
 //				.environment(\.colorScheme, .dark)
-			OrderHistory(orderDatasource: OrderDatasource())
+			OrderHistory()
 				.previewDevice("iPhone Xs Max")
 				.environment(\.colorScheme, .dark)
 		}

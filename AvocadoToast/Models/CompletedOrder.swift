@@ -7,19 +7,83 @@
 //
 
 import Foundation
+import CoreGraphics
 
-// this model struct will represent
+// this model class will represent
 // a completed order
+
+// was initially a struct but changed
+// model to a class so we get both
+// class and value equality functionality
 
 // conforms to Identifiable so we can
 // iterate over it using ForEach
 
-struct CompletedOrder: Identifiable {
+class CompletedOrder: Identifiable {
 	let id = UUID() // conformance to Identifiable
 	
 	var name: String
 	var timePlaced: Date
-	var toppings: [Topping] = [] // using our Topping model
+	var eggLocation: CGSize
+	var quantity: Int
+	// our model enum types
+	var toppings: [Topping]
+	var bread: Bread
+	var spread: Spread
+	var avocado: Avocado
+	
+	init(
+		name: String,
+		timePlaced: Date,
+		eggLocation: CGSize,
+		quantity: Int,
+		toppings: [Topping] = [],
+		bread: Bread,
+		spread: Spread,
+		avocado: Avocado
+	) {
+		self.name = name
+		self.timePlaced = timePlaced
+		self.eggLocation = eggLocation
+		self.quantity = quantity
+		self.toppings = toppings
+		self.bread = bread
+		self.spread = spread
+		self.avocado = avocado
+	}
+}
+
+// conforms to Equatable so we get
+// equality functionality
+
+extension CompletedOrder: Equatable {
+	static func == (lhs: CompletedOrder, rhs: CompletedOrder) -> Bool {
+		// if my thinking is correct, then I do not want to
+		// use .id when determining equality, as two different
+		// references can have all other property values be
+		// equal but their id's would be different because
+		// they're two different references
+		
+		// that would lead to unpredictable behavior and many
+		// a headache
+		
+		// in addition, we do not care to compare every property
+		// value when determining equality between property values
+		// of two different instances. instead, we only equate a
+		// few of the property values to determine equality and
+		// when we really need to identify equality, we depend on
+		// reference equality ( === ), the beauty of using classes
+			return
+//				lhs.id == rhs.id &&
+				lhs.name == rhs.name &&
+//				lhs.timePlaced == rhs.timePlaced &&
+//				lhs.eggLocation == rhs.eggLocation &&
+//				lhs.quantity == rhs.quantity &&
+				lhs.toppings == rhs.toppings &&
+				lhs.bread == rhs.bread &&
+				lhs.spread == rhs.spread &&
+				lhs.avocado == rhs.avocado
+	}
 }
 
 #if DEBUG
@@ -30,45 +94,124 @@ extension CompletedOrder {
 		
 //		CompletedOrder(name: "Rye with Almond Butter",
 //									 timePlaced: Date(),
-//									 toppings: [.salt, .redPepperFlakes]),
+//									 eggLocation: .zero,
+//									 toppings: [.salt, .redPepperFlakes],
+//									 bread: .sourdough,
+//									 spread: .hummus,
+//									 avocado: .mashed),
 //
-//		CompletedOrder(name: "Multi-Grain with Hummus",
+//		CompletedOrder(name: "Rye with Almond Butter",
 //									 timePlaced: Date(),
-//									 toppings: [.redPepperFlakes]),
+//									 eggLocation: .zero,
+//									 toppings: [.salt, .redPepperFlakes],
+//									 bread: .sourdough,
+//									 spread: .hummus,
+//									 avocado: .mashed),
 //
-//		CompletedOrder(name: "Multi-Grain Toast",
+//		CompletedOrder(name: "Rye with Almond Butter",
 //									 timePlaced: Date(),
-//									 toppings: [.salt]),
-//
-//		CompletedOrder(name: "Sourdough with Chutney",
-//									 timePlaced: Date(),
-//									 toppings: [.salt, .redPepperFlakes]),
+//									 eggLocation: .zero,
+//									 toppings: [.salt, .redPepperFlakes],
+//									 bread: .sourdough,
+//									 spread: .hummus,
+//									 avocado: .mashed),
 		
+		CompletedOrder(name: "Rye with Almond Butter",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Multi-Grain with Hummus",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 2,
+									 toppings: [.redPepperFlakes],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Multi-Grain Toast",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 5,
+									 toppings: [.salt],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Sourdough with Chutney",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
 		CompletedOrder(name: "Rye with Peanut Butter",
 									 timePlaced: Date(),
-									 toppings: [.salt, .redPepperFlakes, .eggs]),
-		
-//		CompletedOrder(name: "Wheat with Tapenade",
-//									 timePlaced: Date(),
-//									 toppings: [.eggs]),
-//
-//		CompletedOrder(name: "Sourdough with Vegemite",
-//									 timePlaced: Date(),
-//									 toppings: [.salt]),
-		
+									 eggLocation: .zero,
+									 quantity: 3,
+									 toppings: [.salt, .redPepperFlakes, .eggs],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Wheat with Tapenade",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 2,
+									 toppings: [.eggs],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Sourdough with Vegemite",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
 		CompletedOrder(name: "Wheat with Féroce",
 									 timePlaced: Date(),
-									 toppings: [.salt, .redPepperFlakes, .eggs]),
-		
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes, .eggs],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
 		CompletedOrder(name: "Rye with Honey",
-									 timePlaced: Date()),
-//
-//		CompletedOrder(name: "Multi-Grain Toast",
-//									 timePlaced: Date(),
-//									 toppings: [.salt, .eggs]),
-//
-//		CompletedOrder(name: "Sourdough with Chutney",
-//									 timePlaced: Date()),
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 3,
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Multi-Grain Toast",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 toppings: [.salt, .eggs],
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
+
+		CompletedOrder(name: "Sourdough with Chutney",
+									 timePlaced: Date(),
+									 eggLocation: .zero,
+									 quantity: 1,
+									 bread: .sourdough,
+									 spread: .hummus,
+									 avocado: .mashed),
 		
 	]
 }

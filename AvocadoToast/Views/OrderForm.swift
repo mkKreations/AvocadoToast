@@ -17,9 +17,8 @@ struct OrderForm: View {
 	// of truth for this value
 	@State var order: Order = Order.sampleOrder
 	
-	// this is the essentially our global model
-	// could have used @EnvironmentObject as well
-	@ObservedObject var orderDatasource: OrderDatasource
+	// this is our global model
+	@EnvironmentObject var orderDatasource: OrderDatasource
 
 	var body: some View {
 		Form {
@@ -69,7 +68,12 @@ struct OrderForm: View {
 		// create CompletedOrder
 		let completedOrder = CompletedOrder(name: formattedOrderName,
 																				timePlaced: Date(),
-																				toppings: getOrderToppings)
+																				eggLocation: order.eggLocation,
+																				quantity: order.quantity,
+																				toppings: getOrderToppings,
+																				bread: order.bread,
+																				spread: order.spread,
+																				avocado: order.avocado)
 		// append to global datasource
 		orderDatasource.completedOrders.append(completedOrder)
 	}
@@ -79,10 +83,10 @@ struct OrderForm_Preview: PreviewProvider {
 	static var previews: some View {
 		Group {
 			NavigationView {
-				OrderForm(orderDatasource: OrderDatasource())
+				OrderForm()
 			}
 			NavigationView {
-				OrderForm(orderDatasource: OrderDatasource())
+				OrderForm()
 			}
 			.previewDevice("iPhone Xs Max")
 		}
