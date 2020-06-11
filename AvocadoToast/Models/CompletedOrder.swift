@@ -103,7 +103,7 @@ extension CompletedOrder {
 
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(timeIntervalSinceNow: -5627838),
-									 eggLocation: .zero,
+									 eggLocation: CGSize(width: -35, height: 55),
 									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes, .eggs],
 									 bread: .sourdough,
@@ -139,7 +139,7 @@ extension CompletedOrder {
 		
 		CompletedOrder(name: "Sourdough with Chutney",
 									 timePlaced: Date(timeIntervalSinceNow: -1627838),
-									 eggLocation: .zero,
+									 eggLocation: CGSize(width: 35, height: -55),
 									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes, .eggs],
 									 bread: .sourdough,
