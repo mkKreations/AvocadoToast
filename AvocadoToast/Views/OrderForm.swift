@@ -36,6 +36,7 @@ struct OrderForm: View {
 			}
 			
 			Section {
+				// max quantity to order is currently 10
 				Stepper(value: $order.quantity, in: 1...10) {
 					Text("Quantity: \(order.quantity)")
 				}
@@ -64,6 +65,7 @@ struct OrderForm: View {
 	private var formattedOrderName: String {
 		return "\(order.bread.rawValue) with \(order.spread.rawValue)"
 	}
+	
 	// gather toppings for order
 	private var getOrderToppings: [Topping] {
 		var tmp = [Topping]()
@@ -85,7 +87,7 @@ struct OrderForm: View {
 
 		// create CompletedOrder
 		let completedOrder = CompletedOrder(name: formattedOrderName,
-																				timePlaced: Date(),
+																				timePlaced: Date(), // current time
 																				eggLocation: order.eggLocation,
 																				quantity: order.quantity,
 																				toppings: getOrderToppings,

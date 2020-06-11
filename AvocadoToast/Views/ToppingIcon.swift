@@ -9,16 +9,10 @@
 import SwiftUI
 
 // this view struct will represent a topping
-// as an icon in the OrderHistory view struct
+// as an icon in the OrderCell view struct
 
 // all Topping icons will look similar - just
 // slight differences in visual configuration
-
-//struct ToppingShapeIcon: Shape {
-//	func path(in rect: CGRect) -> Path {
-//		let path =
-//	}
-//}
 
 struct ToppingIcon: View {
 	// capturing environment var so we can configure icon correctly
@@ -29,7 +23,7 @@ struct ToppingIcon: View {
 	
 	// configure UI based on Topping
 	// tuple is a good option since we
-	// are only configuring two values
+	// are only configuring a few values
 	
 	// pretty cool that to add a completely
 	// new ToppingIcon just add a new case
@@ -45,12 +39,10 @@ struct ToppingIcon: View {
 			return (.yellow, "E", .white)
 		}
 	}
+	
 	private let size: CGFloat = 25
 	
 	var body: some View {
-		// setting explicit size on ZStack because we want
-		// the view rendered from this struct to have set
-		// dimensions
 		ZStack {
 			Circle()
 				.foregroundColor(self.visualConfig.backgroundColor)
@@ -59,6 +51,9 @@ struct ToppingIcon: View {
 				.font(.subheadline)
 				.foregroundColor(self.visualConfig.foregroundColor)
 		}
+		// setting explicit size on ZStack because we want
+		// the view rendered from this struct to have set
+		// dimensions without exterior dependencies
 		.frame(width: size, height: size)
 	}
 }

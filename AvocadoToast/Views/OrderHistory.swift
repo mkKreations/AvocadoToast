@@ -17,6 +17,7 @@ struct OrderHistory: View {
 	@EnvironmentObject var orderDatasource: OrderDatasource
 	
 	var body: some View {
+		// the ease of conforming to Identifiable
 		List(orderDatasource.completedOrders) { order in
 			OrderCell(order: order)
 		}

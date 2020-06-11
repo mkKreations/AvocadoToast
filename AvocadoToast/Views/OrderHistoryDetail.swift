@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+// this view struct will represent the detail
+// view of a CompletedOrder - the only detail
+// currently not being show is completededOrder.quantity
+
 struct OrderHistoryDetail: View {
 	// no need for property wrapper - just displaying data
 	var completedOrder: CompletedOrder
@@ -68,7 +72,7 @@ struct OrderHistoryDetail: View {
 				Section(header: Text("EGG")) {
 					EggPlacementView(eggLocation: Binding.constant(self.completedOrder.eggLocation))
 						// setting height here because View lays out correctly
-						// horizontally but the original height is very small
+						// horizontally but the proposed height is very small -
 						// one thing to note.. the width will always lay out
 						// correctly - despite any absurd values passed in for
 						// the height, so it's really just a matter of determining

@@ -54,7 +54,7 @@ class CompletedOrder: Identifiable {
 }
 
 // conforms to Equatable so we get
-// equality functionality
+// custom equality functionality
 
 extension CompletedOrder: Equatable {
 	static func == (lhs: CompletedOrder, rhs: CompletedOrder) -> Bool {

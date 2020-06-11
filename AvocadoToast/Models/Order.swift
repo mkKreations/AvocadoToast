@@ -10,10 +10,12 @@ import Foundation
 import CoreGraphics
 
 // this struct will serve as the model
+// for an order
 
 // a struct currently works well as the
 // model object since we're not passing
 // around the object in between views
+// so no need to maintain only one instance
 
 struct Order {
 	var includesSalt: Bool

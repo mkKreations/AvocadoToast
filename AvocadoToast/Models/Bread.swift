@@ -9,17 +9,18 @@
 import Foundation
 
 // this enum will represent different
-// bread options a user can choose for
-// their order
+// bread options a user can choose from
+// for their order
 
 // conformance to CaseIterable so we have
 // access to .[allCases]
 
 // conforms to Hashable so we can use instances
 // of this type as the SelectionValue for Picker
+// basically means that each instance is unique
 
-// string raw values to provide the titles for
-// each
+// using String raw values to provide the titles
+// for each case
 
 // finally figured out how to conform to Identiable
 // in a struct
@@ -32,6 +33,9 @@ import Foundation
 // that value is unique for each case but will return the
 // same value even when a new instance of this struct is
 // copied (value types)
+
+// important to note that we could also return self here
+// and it would work just as well as returning rawValue
 
 enum Bread: String, CaseIterable, Hashable, Identifiable {
 	var id: String { rawValue } // implicit return

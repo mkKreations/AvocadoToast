@@ -10,7 +10,6 @@ import SwiftUI
 
 // TODO:
 // restrict dragging of egg to bounds of ZStack
-// check line 70
 
 // this view struct will allow a user to drag an egg
 // on top of their toast to place it where they would
@@ -33,13 +32,11 @@ struct EggPlacementView: View {
 	// when it is being updated in the DragGesture .updating
 	@GestureState private var dragOffset: CGSize = .zero
 	
-	// environemnt variable to track isEnabled
-	// automatically refreshes any views that
-	// depend on its state
+	// environment variable to track isEnabled
 	@Environment(\.isEnabled) private var isEnabled: Bool
 	
 	// our drag gesture - keeping type hidden using opaque
-	// type but compiler knows
+	// type but compiler knows underlying type
 	private var dragGesture: some Gesture {
 		DragGesture()
 			.updating($dragOffset) { (value, state, transaction) in

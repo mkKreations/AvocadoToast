@@ -10,6 +10,7 @@ import Foundation
 
 // link to date format specifiers
 // https://nsdateformatter.com/
+
 extension Date {
 	// this date format is for displaying the date
 	// string within OrderHistory
@@ -21,7 +22,7 @@ extension Date {
 
 	// this date format is for displaying the date
 	// string within OrderHistoryDetail - less used
-	// than previous method
+	// currently than previous method
 	func formattedHistoryDetailDate() -> String {
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "MMM d, yyyy" // set desired format for date

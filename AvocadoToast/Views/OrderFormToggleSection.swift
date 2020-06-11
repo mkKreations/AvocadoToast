@@ -27,14 +27,15 @@ struct OrderFormToggleSection: View {
 				Text("Include Red Pepper Flakes")
 			}
 			// pass an animation() with the binding so
-			// that upon state change - you receive an
+			// that upon state change - we receive an
 			// animation
 			Toggle(isOn: $order.includesEgg.animation()) {
 				Text("Include Egg")
 			}
 			if order.includesEgg {
 				// we will navigate over to this screen if the
-				// user wants an egg included
+				// user wants an egg included - passing the
+				// @Binding to update the value of any dependencies
 				NavigationLink(destination: EggPositionView(eggLocation: $order.eggLocation)) {
 					Text("Place my egg!")
 				}

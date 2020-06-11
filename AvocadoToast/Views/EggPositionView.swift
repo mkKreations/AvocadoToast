@@ -16,6 +16,9 @@ import SwiftUI
 // solely focuses on moving the egg
 
 struct EggPositionView: View {
+	// passing this @Binding thru to EggPlacementView
+	// there will be no manipulation of self.eggLocation
+	// here in this View struct
 	@Binding var eggLocation: CGSize
 	
 	var body: some View {
@@ -24,10 +27,10 @@ struct EggPositionView: View {
 				Button("Reset") {
 					// a little animation to keep things schnazzy & classy
 					withAnimation {
-						// one of the many benefits of using SwiftUI here
-						// just updating the state of a property wrapped
-						// value automatically updates the UI - even if
-						// the UI is located in another type
+						// one of the many benefits of using SwiftUI
+						// updating the state of a property wrapped
+						// value automatically updates the UI - even
+						// if the UI is located in another type
 						self.eggLocation = .zero
 					}
 				}
