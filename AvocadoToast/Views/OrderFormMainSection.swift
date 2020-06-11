@@ -24,9 +24,9 @@ struct OrderFormMainSection: View {
 			// the layout jumps after navigating to
 			// the options of a picker after selecting
 			// the picker row in the form
-			
 			// as far as I know, this is a problem with
 			// SwiftUI
+			
 			Picker("Bread", selection: $order.bread) {
 				ForEach(Bread.allCases) { bread in
 					Text(bread.rawValue)
@@ -36,13 +36,13 @@ struct OrderFormMainSection: View {
 			Picker("Spread", selection: $order.spread) {
 				ForEach(Spread.allCases) { spread in
 					Text(spread.rawValue)
-						.tag(spread)
+						.tag(spread) // make sure to add tag to uniquely id each case
 				}
 			}
 			Picker("Avocado", selection: $order.avocado) {
 				ForEach(Avocado.allCases) { avocado in
 					Text(avocado.rawValue)
-						.tag(avocado)
+						.tag(avocado) // make sure to add tag to uniquely id each case
 				}
 			}
 		}

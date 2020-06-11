@@ -9,7 +9,8 @@
 import SwiftUI
 
 // this view struct will display the
-// toppings a user chose for their Order
+// toppings a user chose for their
+// CompletedOrder
 
 struct OrderDetailExtrasSection: View {
 	var completedOrder: CompletedOrder

@@ -10,7 +10,8 @@ import Foundation
 
 // this datasource object will be the
 // common object shared between all
-// base level views of the app
+// base level views of the app as an
+// @EnvironmentObject
 
 // it will contain the data that I want
 // to share between views that are not
@@ -35,7 +36,7 @@ class OrderDatasource: ObservableObject {
 		// the index of the instance that equates to the passed
 		// in parameter based on the method we define to conform
 		// to Equatable - what we really want is reference based
-		// equality and for that reason we loop thru and equate
+		// equality, and for that reason, we loop thru and equate
 		// using ( === )
 		for order in completedOrders.enumerated() {
 			// we know that completedOrder is in the completedOrders

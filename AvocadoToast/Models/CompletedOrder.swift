@@ -54,7 +54,7 @@ class CompletedOrder: Identifiable {
 }
 
 // conforms to Equatable so we get
-// equality functionality
+// custom equality functionality
 
 extension CompletedOrder: Equatable {
 	static func == (lhs: CompletedOrder, rhs: CompletedOrder) -> Bool {
@@ -91,127 +91,60 @@ extension CompletedOrder: Equatable {
 
 extension CompletedOrder {
 	static let sampleOrders = [
-		
-//		CompletedOrder(name: "Rye with Almond Butter",
-//									 timePlaced: Date(),
-//									 eggLocation: .zero,
-//									 toppings: [.salt, .redPepperFlakes],
-//									 bread: .sourdough,
-//									 spread: .hummus,
-//									 avocado: .mashed),
-//
-//		CompletedOrder(name: "Rye with Almond Butter",
-//									 timePlaced: Date(),
-//									 eggLocation: .zero,
-//									 toppings: [.salt, .redPepperFlakes],
-//									 bread: .sourdough,
-//									 spread: .hummus,
-//									 avocado: .mashed),
-//
-//		CompletedOrder(name: "Rye with Almond Butter",
-//									 timePlaced: Date(),
-//									 eggLocation: .zero,
-//									 toppings: [.salt, .redPepperFlakes],
-//									 bread: .sourdough,
-//									 spread: .hummus,
-//									 avocado: .mashed),
-		
+				
 		CompletedOrder(name: "Rye with Almond Butter",
-									 timePlaced: Date(),
+									 timePlaced: Date(timeIntervalSinceNow: -7237838),
 									 eggLocation: .zero,
 									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes],
-									 bread: .sourdough,
-									 spread: .hummus,
+									 bread: .rye,
+									 spread: .almond_butter,
 									 avocado: .mashed),
 
+		CompletedOrder(name: "Sourdough with Chutney",
+									 timePlaced: Date(timeIntervalSinceNow: -5627838),
+									 eggLocation: CGSize(width: -35, height: 55),
+									 quantity: 1,
+									 toppings: [.salt, .redPepperFlakes, .eggs],
+									 bread: .sourdough,
+									 spread: .chutney,
+									 avocado: .sliced),
+
 		CompletedOrder(name: "Multi-Grain with Hummus",
-									 timePlaced: Date(),
+									 timePlaced: Date(timeIntervalSinceNow: -3692838),
 									 eggLocation: .zero,
 									 quantity: 2,
 									 toppings: [.redPepperFlakes],
-									 bread: .sourdough,
+									 bread: .multi_grain,
 									 spread: .hummus,
 									 avocado: .mashed),
-
-		CompletedOrder(name: "Multi-Grain Toast",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 5,
-									 toppings: [.salt],
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Sourdough with Chutney",
-									 timePlaced: Date(),
+		
+		CompletedOrder(name: "Rye with Almond Butter",
+									 timePlaced: Date(timeIntervalSinceNow: -2937838),
 									 eggLocation: .zero,
 									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes],
-									 bread: .sourdough,
-									 spread: .hummus,
+									 bread: .rye,
+									 spread: .almond_butter,
 									 avocado: .mashed),
 
-		CompletedOrder(name: "Rye with Peanut Butter",
-									 timePlaced: Date(),
+		CompletedOrder(name: "White Toast with Almou",
+									 timePlaced: Date(timeIntervalSinceNow: -2737838),
 									 eggLocation: .zero,
-									 quantity: 3,
-									 toppings: [.salt, .redPepperFlakes, .eggs],
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Wheat with Tapenade",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 2,
-									 toppings: [.eggs],
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Sourdough with Vegemite",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 1,
+									 quantity: 5,
 									 toppings: [.salt],
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Wheat with Féroce",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
+									 bread: .white,
+									 spread: .almou,
+									 avocado: .sliced),
+		
+		CompletedOrder(name: "Sourdough with Chutney",
+									 timePlaced: Date(timeIntervalSinceNow: -1627838),
+									 eggLocation: CGSize(width: 35, height: -55),
 									 quantity: 1,
 									 toppings: [.salt, .redPepperFlakes, .eggs],
 									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Rye with Honey",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 3,
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Multi-Grain Toast",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 1,
-									 toppings: [.salt, .eggs],
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
-
-		CompletedOrder(name: "Sourdough with Chutney",
-									 timePlaced: Date(),
-									 eggLocation: .zero,
-									 quantity: 1,
-									 bread: .sourdough,
-									 spread: .hummus,
-									 avocado: .mashed),
+									 spread: .chutney,
+									 avocado: .sliced),
 		
 	]
 }
