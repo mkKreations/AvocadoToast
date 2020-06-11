@@ -65,7 +65,7 @@ struct OrderHistoryDetail: View {
 				
 				// disabling the view here cuz no editing will be happening
 				// just displaying data
-				Section(header: Text("Egg")) {
+				Section(header: Text("EGG")) {
 					EggPlacementView(eggLocation: Binding.constant(self.completedOrder.eggLocation))
 						// setting height here because View lays out correctly
 						// horizontally but the original height is very small
