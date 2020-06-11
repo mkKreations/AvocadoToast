@@ -6,7 +6,8 @@
 This app is the product of following along with Apple iOS developers from the WWDC 2019 conference, 
 where SwiftUI and other frameworks, such as Combine, were first introduced. This app is a tab view
 that allows a user to place an order, with details such as adding toppings, changing quantity, and 
-placing the egg.  In addition, the user can see previously placed orders as well as associated details.
+placing the egg.  In addition, the user can see previously placed orders as well as details associated
+with that order.
 
 
 ## Features
