@@ -46,6 +46,10 @@ struct OrderForm: View {
 				Button(action: submitOrder) {
 					Text("Order")
 				}
+				// set frame to be width of entire screen
+				// so we can easily center the text in the
+				// button frame
+				.frame(minWidth: 0, idealWidth: .infinity, maxWidth: .infinity, alignment: .center)
 				.alert(isPresented: $showAlert) {
 					Alert(title: Text("Order Placed!"),
 								message: nil,
