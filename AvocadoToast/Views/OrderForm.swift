@@ -13,13 +13,18 @@ import SwiftUI
 // ordering our avocado toast
 
 struct OrderForm: View {
-	// this view struct is the source
-	// of truth for this value
-	@State var order: Order = Order.sampleOrder
+	// source of truth for these values
+	// keep private so others don't interfere
+	@State private var order: Order = Order.sampleOrder
+	
+	// we toggle this value to true & maintain
+	// the value as true because we always want
+	// to show alert upon button press event
+	@State private var showAlert: Bool = false
 	
 	// this is our global model
 	@EnvironmentObject var orderDatasource: OrderDatasource
-
+	
 	var body: some View {
 		Form {
 			Section {
@@ -36,9 +41,15 @@ struct OrderForm: View {
 				}
 			}
 			
+			// we present alert on button press
 			Section {
 				Button(action: submitOrder) {
 					Text("Order")
+				}
+				.alert(isPresented: $showAlert) {
+					Alert(title: Text("Order Placed!"),
+								message: nil,
+								dismissButton: .default(Text("Ok")))
 				}
 			}
 		}
@@ -65,6 +76,9 @@ struct OrderForm: View {
 	}
 	
 	private func submitOrder() {
+		// toggle state to show alert
+		showAlert = true
+
 		// create CompletedOrder
 		let completedOrder = CompletedOrder(name: formattedOrderName,
 																				timePlaced: Date(),
@@ -74,6 +88,7 @@ struct OrderForm: View {
 																				bread: order.bread,
 																				spread: order.spread,
 																				avocado: order.avocado)
+		
 		// append to global datasource
 		orderDatasource.completedOrders.append(completedOrder)
 	}
