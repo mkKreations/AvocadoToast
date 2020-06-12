@@ -1,5 +1,8 @@
 # WWDC 2019 - SwiftUI Essentials
 
+Click here to visit the Sketch repos used to create all assets/app icon for this iOS app:
+[AvocadoToast Sketch](https://github.com/mkKreations/AvocadoToast_Sketch)
+
 
 ## Description
 
