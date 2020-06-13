@@ -42,7 +42,7 @@
 		2CBAB3DA24901F6A00E4F040 /* OrderHistoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetail.swift; sourceTree = "<group>"; };
 		2CBAB3DC249028CE00E4F040 /* OrderDetailMainSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailMainSection.swift; sourceTree = "<group>"; };
 		2CBAB3DE24902AEB00E4F040 /* OrderDetailExtrasSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailExtrasSection.swift; sourceTree = "<group>"; };
-		2CC7CECF248429480048BB77 /* AvocadoToast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvocadoToast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC7CECF248429480048BB77 /* Avocado Toast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Avocado Toast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7CED2248429480048BB77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CC7CED4248429480048BB77 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CC7CED6248429480048BB77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		2CC7CED0248429480048BB77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CC7CECF248429480048BB77 /* AvocadoToast.app */,
+				2CC7CECF248429480048BB77 /* Avocado Toast.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 			);
 			name = AvocadoToast;
 			productName = AvocadoToast;
-			productReference = 2CC7CECF248429480048BB77 /* AvocadoToast.app */;
+			productReference = 2CC7CECF248429480048BB77 /* Avocado Toast.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -394,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mkKreations.AvocadoToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Avocado Toast";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,7 +414,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mkKreations.AvocadoToast;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Avocado Toast";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
