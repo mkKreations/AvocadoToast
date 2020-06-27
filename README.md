@@ -1,7 +1,25 @@
-# WWDC 2019 - SwiftUI Essentials
+# AvocadoToast
 
 Click here to visit the Sketch repos used to create all assets/app icon for this iOS app:
 [AvocadoToast Sketch](https://github.com/mkKreations/AvocadoToast_Sketch)
+
+## Screenshots
+
+### Home Screen
+
+[![Home-Screen.png](https://i.postimg.cc/cHTCQBmx/Home-Screen.png)](https://postimg.cc/PppdHZ99)
+
+### Home Screen w/ Egg Placement Option
+
+[![Home-Screen-Egg.png](https://i.postimg.cc/3NRR90Sg/Home-Screen-Egg.png)](https://postimg.cc/62ktpqN3)
+
+### Egg Placement View
+
+[![Egg-Placement.png](https://i.postimg.cc/wxf3MFMF/Egg-Placement.png)](https://postimg.cc/9z9cNdGq)
+
+### Detail Screen
+
+[![Detail-Screen.png](https://i.postimg.cc/90nfkXKs/Detail-Screen.png)](https://postimg.cc/n9qZjxH1)
 
 
 ## Description
