@@ -15,6 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0Q-kx-NWa" userLabel="Background">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Avocado" translatesAutoresizingMaskIntoConstraints="NO" id="u11-lx-71w">
                                 <rect key="frame" x="41.5" y="224" width="331" height="448"/>
                             </imageView>
@@ -22,7 +26,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="u11-lx-71w" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.8" id="143-It-TdR"/>
+                            <constraint firstAttribute="bottom" secondItem="P0Q-kx-NWa" secondAttribute="bottom" id="2aB-2I-BMe"/>
+                            <constraint firstItem="P0Q-kx-NWa" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="WYf-L2-Sru"/>
+                            <constraint firstItem="P0Q-kx-NWa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZZU-FU-hej"/>
                             <constraint firstItem="u11-lx-71w" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="0.5" id="ccS-If-RKB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P0Q-kx-NWa" secondAttribute="trailing" id="ce3-cV-Wbc"/>
                             <constraint firstItem="u11-lx-71w" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vnz-DE-l4C"/>
                             <constraint firstItem="u11-lx-71w" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xIe-ey-41L"/>
                         </constraints>
