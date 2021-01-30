@@ -24,8 +24,9 @@ import Foundation
 class OrderDatasource: ObservableObject {
 	// publish the changes to the value of this
 	// property to any View subscribers
-	@Published var completedOrders = CompletedOrder.sampleOrders
-	
+//	@Published var completedOrders = CompletedOrder.sampleOrders
+	@Published var completedOrders: [CompletedOrder] = []
+
 	// we return the most recent time a user ordered
 	// the passed in Order, only if that Order has been
 	// previously ordered - if Order has never been
