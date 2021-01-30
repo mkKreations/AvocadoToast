@@ -16,7 +16,7 @@ uses a tab view that allows a user to place an order, with details such as addin
 and placing an egg. In addition, the user can see previously placed orders as well as details associated
 with said orders. The app was written to test the power of SwiftUI and utilize its declarative format. 
 
-AvocadoToast uses a custom app icon created in this [Sketch project](https://github.com/mkKreations/AvocadoToast_Sketch)!
+AvocadoToast uses a custom app icon and custom assets - all created in this [Sketch project](https://github.com/mkKreations/AvocadoToast_Sketch)!
 
 
 ## Features
